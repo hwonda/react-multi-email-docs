@@ -1,37 +1,34 @@
 ---
-sidebar_position: 1
+sidebar_position: 2
 ---
 
 # Quick Start
 
-Let's discover **Docusaurus in less than 5 minutes**.
+:partying_face: Welcome to **React-multi-email**! <br/>This open source will provide a good solution for your project to enter multiple email addresses.
+
+
 
 ## Getting Started
 
-Get started by **creating a new site**.
+You can apply **react-multi-email** feature to project in :alarm_clock:3 minutes!
 
-Or **try Docusaurus immediately** with **[docusaurus.new](https://docusaurus.new)**.
+### Requirements
 
-### What you'll need
+The project consists of the following elements. So your project should also include the following elements.
+  - [React](https://react.dev/)
+  - [TypeScript](https://www.typescriptlang.org/)
+  - [Node.js](https://nodejs.org/en/download/) : version 16 or above are recommended
 
-- [Node.js](https://nodejs.org/en/download/) version 16.14 or above:
-  - When installing Node.js, you are recommended to check all checkboxes related to dependencies.
+### Installation
 
-## Generate a new site
+  You can get started immediately with the following command.
 
-Generate a new Docusaurus site using the **classic template**.
-
-The classic template will automatically be added to your project after you run the command:
-
-```bash
-npm init docusaurus@latest my-website classic
-```
-
+  ```bash
+  npm install react-multi-email 
+  ```
 You can type this command into Command Prompt, Powershell, Terminal, or any other integrated terminal of your code editor.
 
-The command also installs all necessary dependencies you need to run Docusaurus.
-
-## Start your site
+<!-- ## Start your site
 
 Run the development server:
 
@@ -44,4 +41,4 @@ The `cd` command changes the directory you're working with. In order to work wit
 
 The `npm run start` command builds your website locally and serves it through a development server, ready for you to view at http://localhost:3000/.
 
-Open `docs/intro.md` (this page) and edit some lines: the site **reloads automatically** and displays your changes.
+Open `docs/intro.md` (this page) and edit some lines: the site **reloads automatically** and displays your changes. -->
