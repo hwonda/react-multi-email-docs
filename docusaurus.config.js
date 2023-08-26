@@ -19,8 +19,8 @@ const config = {
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'axisj', // Usually your GitHub org/user name.
-  projectName: 'react-multi-email', // Usually your repo name.
+  organizationName: 'hwonda', // Usually your GitHub org/user name.
+  projectName: 'react-multi-email-docs', // Usually your repo name.
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
