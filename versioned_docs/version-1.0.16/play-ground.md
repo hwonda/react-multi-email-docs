@@ -6,7 +6,7 @@ sidebar_position: 1
 
 :tada: Welcome to **React-multi-email**.
 
-If you want to try the **demo** version first, click :point_right: **[Play Ground](https://codesandbox.io/s/jpvjk8m5o9)**. This demo was created with codesandbox.
+If you want to try the **demo** version first, click :point_right: **[Demo](https://codesandbox.io/s/jpvjk8m5o9)**. This demo was created with [codesandbox](https://codesandbox.io/).
 
 ![play-ground](./img/playground.gif) 
 
