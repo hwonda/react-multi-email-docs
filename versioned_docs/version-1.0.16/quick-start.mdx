@@ -5,8 +5,7 @@ sidebar_position: 2
 # Quick Start
 
 :partying_face: Welcome to **React-multi-email**! <br/>This open source will provide a good solution for your project to enter multiple email addresses.
-
-
+<br/>
 
 ## Getting Started
 
@@ -27,16 +26,17 @@ The project consists of the following elements. So your project should also incl
   npm install react-multi-email 
   ```
   ```bash title="yarn"
-  yarn install react-multi-email 
+  yarn add react-multi-email 
   ```
 
 :::tip
 You can type this command into Command Prompt, Powershell, Terminal, or any other integrated terminal of your code editor.
 :::
+<br/><br/>
 
 import BasicExample from '../../static/components/BasicExample'
 
-# Basic example
+## Basic example
 
 As you can see in the [Demo](./play-ground.md) version, react-multi-mail has the following form.
 Enter an email in the text area and press Enter to register that email address. 
@@ -45,12 +45,61 @@ Type directly into the form below and press Enter.
 <BasicExample />
 
 And look at how it can be imported into your project.
+<br/><br/>
 
-## Code
+## Useage
 
-### import react-multi-email
+### Import
 
-```typescript title="MultiEmail.tsx"
-// import * as React from 'react';
-import { ReactMultiEmail } from '../react-multi-email';
+```typescript title="ReactMultiEmail.tsx"
+import * as React from 'react';
+import { ReactMultiEmail } from 'react-multi-email';
+import 'react-multi-email/dist/style.css';
 ```
+
+### Components
+
+```typescript title="ReactMultiEmail.tsx"
+export default function BasicExample () {
+  const [emails, setEmails] = React.useState<string[]>([]);
+  return (
+    <div style={styles}>
+      <h3>react-multi-email</h3>
+      <ReactMultiEmail
+        placeholder="Input your Email Address"
+        emails={emails}
+        onChange={(_emails: string[]) => {
+          setEmails(_emails);
+        }}
+        getLabel={(
+          email: string,
+          index: number,
+          removeEmail: (index: number) => void
+        ) => {
+          return (
+            <div data-tag key={index}>
+              {email}
+              <span data-tag-handle onClick={() => removeEmail(index)}>
+                ×
+              </span>
+            </div>
+          );
+        }}
+      />
+      <br />
+      <h4>react-multi-email value</h4>
+      <p>{emails.join(", ") || "empty"}</p>
+    </div>
+  );
+}
+
+const styles = {
+  fontFamily: "sans-serif",
+  width: "500px",
+  border: "1px solid rgb(238, 238, 238)",
+  background: "rgb(243, 243, 243)",
+  padding: "25px",
+  margin: "20px",
+  color: "black",
+};
+  ```

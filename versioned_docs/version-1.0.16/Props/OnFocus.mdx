@@ -1,0 +1,49 @@
+---
+sidebar_position: 3
+---
+
+import OnFocus from '../../../static/components/OnFocus'
+
+## Value
+
+- Property: ```OnFocus```<br/>
+- default: ```None```<br/>
+- type: ```() => void;```
+
+## Result
+
+<OnFocus />
+
+## Code
+
+```tsx title="ReactMultiEmail.tsx"
+const [background, setBackground] = React.useState(styles.background);
+
+const onFocusFunc = () => {
+setBackground("red");
+}
+
+const combinedStyles = {
+...styles,
+background: background
+};
+
+return(<>
+<div style={combinedStyles}>
+    <ReactMultiEmail
+        onFocus={onFocusFunc}
+    />
+</div>
+</>);
+```
+
+OnFocus can specify the function to execute **if it is focused in the text area.** 
+
+The example expresses the function **replace the background color to red if focused.**
+<br/><br/>
+
+:::tip onFocus
+**'onFocus'** prop **runs only when it is focused.**
+
+If you want to execute function when it is focused out, use the next **prop 'onBlur'**
+:::

@@ -19,7 +19,8 @@ export default function placeholder () {
     <div style={styles}>
       <h3>react-multi-email</h3>
       <ReactMultiEmail
-        placeholder="Type anything!"
+        placeholder="Input your Email Address"
+        autoFocus={true}
         emails={emails}
         onChange={(_emails: string[]) => {
           setEmails(_emails);

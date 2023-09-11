@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { ReactMultiEmail } from '../../src/components/React-multi-email/ReactMultiEmail';
 import'../../src/components/React-multi-email/style.css';
-// import { Button } from 'antd';
 
 const styles = {
   fontFamily: "sans-serif",
@@ -15,11 +14,28 @@ const styles = {
 
 export default function placeholder () {
   const [emails, setEmails] = React.useState<string[]>([]);
+  const [background, setBackground] = React.useState(styles.background);
+
+  const onFocusFunc = () => {
+    setBackground("#c32424");
+  }
+  const onBlurFunc = () => {
+    setBackground(styles.background);
+  }
+
+  const combinedStyles = {
+    ...styles,
+    background: background
+  };
+
+  
   return (
-    <div style={styles}>
+    <div style={combinedStyles}>
       <h3>react-multi-email</h3>
       <ReactMultiEmail
-        placeholder="Type anything!"
+        placeholder="Input your Email Address"
+        onFocus={onFocusFunc}
+        onBlur={onBlurFunc}
         emails={emails}
         onChange={(_emails: string[]) => {
           setEmails(_emails);
