@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocs=self.webpackChunkdocs||[]).push([[2154],{6781:a=>{a.exports=JSON.parse('{"label":"hola","permalink":"/react-multi-email-docs/blog/tags/hola","allTagsPath":"/react-multi-email-docs/blog/tags","count":1}')}}]);
