@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { ReactMultiEmail } from '../../src/components/React-multi-email/ReactMultiEmail';
 import'../../src/components/React-multi-email/style.css';
-// import { Button } from 'antd';
 
 const styles = {
   fontFamily: "sans-serif",
