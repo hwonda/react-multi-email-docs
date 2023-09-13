@@ -2,37 +2,100 @@
 sidebar_position: 4
 ---
 
+```onBlur``` is the prop for the function that runs when it is out of focus. Mainly used with ```onFocus```.
+
 import OnBlur from '../../../static/components/OnBlur'
 
-## Value
+## About onBlur
 
 - Property: ```onBlur```<br/>
 - default: ```None```<br/>
 - type: ```() => void;```
 
-## Result
+## Demo
 
 <OnBlur />
 
 ## Code
 
-```tsx title="ReactMultiEmail.tsx"
-const [background, setBackground] = React.useState(styles.background);
+### Whole code
 
-const onBlurFunc = () => {
-setBackground(styles.background);
-}
+```tsx title="onBlur.tsx"
+import * as React from 'react';
+import { ReactMultiEmail } from 'react-multi-email';
+import 'react-multi-email/dist/style.css';
 
-const combinedStyles = {
-...styles,
-background: background
+const styles = {
+  fontFamily: "sans-serif",
+  width: "500px",
+  border: "1px solid rgb(238, 238, 238)",
+  background: "rgb(243, 243, 243)",
+  padding: "25px",
+  margin: "20px",
+  color: "black",
 };
 
-return(<>
-<div style={combinedStyles}>
+export default function placeholder () {
+  const [emails, setEmails] = React.useState<string[]>([]);
+  const [background, setBackground] = React.useState(styles.background);
+
+  const onFocusFunc = () => {
+    setBackground("#c32424");
+  }
+  const onBlurFunc = () => {
+    setBackground(styles.background);
+  }
+
+  const combinedStyles = {
+    ...styles,
+    background: background
+  };
+
+  
+  return (
+    <div style={combinedStyles}>
+      <h3>react-multi-email</h3>
+      <ReactMultiEmail
+        placeholder="Input your Email Address"
+        onFocus={onFocusFunc}
+        onBlur={onBlurFunc}
+        emails={emails}
+        onChange={(_emails: string[]) => {
+          setEmails(_emails);
+        }}
+        getLabel={(
+          email: string,
+          index: number,
+          removeEmail: (index: number) => void
+        ) => {
+          return (
+            <div data-tag key={index}>
+              {email}
+              <span data-tag-handle onClick={() => removeEmail(index)}>
+                ×
+              </span>
+            </div>
+          );
+        }}
+      />
+      <br />
+      <h4>react-multi-email value</h4>
+      <p>{emails.join(", ") || "empty"}</p>
+    </div>
+  );
+}
+```
+
+### Specific code
+
+```tsx title="onBlur.tsx"
+const onBlurFunc = () => {
+    // what you want to do when it is out of focus
+}
+
+return(
     <ReactMultiEmail
         onBlur={onBlurFunc}
     />
-</div>
-</>);
+);
 ```

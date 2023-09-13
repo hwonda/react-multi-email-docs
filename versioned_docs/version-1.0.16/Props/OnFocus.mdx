@@ -2,48 +2,107 @@
 sidebar_position: 3
 ---
 
-import OnFocus from '../../../static/components/OnFocus'
-
-## Value
-
-- Property: ```OnFocus```<br/>
-- default: ```None```<br/>
-- type: ```() => void;```
-
-## Result
-
-<OnFocus />
-
-## Code
-
-```tsx title="ReactMultiEmail.tsx"
-const [background, setBackground] = React.useState(styles.background);
-
-const onFocusFunc = () => {
-setBackground("red");
-}
-
-const combinedStyles = {
-...styles,
-background: background
-};
-
-return(<>
-<div style={combinedStyles}>
-    <ReactMultiEmail
-        onFocus={onFocusFunc}
-    />
-</div>
-</>);
-```
-
 OnFocus can specify the function to execute **if it is focused in the text area.** 
 
 The example expresses the function **replace the background color to red if focused.**
-<br/><br/>
+
+import OnFocus from '../../../static/components/OnFocus'
+
+## About onFocus
+
+- Property: ```onFocus```<br/>
+- default: ```None```<br/>
+- type: ```() => void;```
+
+## Demo
+
+<OnFocus />
 
 :::tip onFocus
 **'onFocus'** prop **runs only when it is focused.**
-
 If you want to execute function when it is focused out, use the next **prop 'onBlur'**
 :::
+
+## Code
+
+### Whole Code
+
+```tsx title="onFocus.mdx"
+import * as React from 'react';
+import { ReactMultiEmail } from 'react-multi-email';
+import 'react-multi-email/dist/style.css';
+
+const styles = {
+  fontFamily: "sans-serif",
+  width: "500px",
+  border: "1px solid rgb(238, 238, 238)",
+  background: "rgb(243, 243, 243)",
+  padding: "25px",
+  margin: "20px",
+  color: "black",
+};
+
+export default function placeholder () {
+  const [emails, setEmails] = React.useState<string[]>([]);
+  const [background, setBackground] = React.useState(styles.background);
+
+  const onFocusFunc = () => {
+    setBackground("#c32424");
+  }
+  const onBlurFunc = () => {
+    setBackground(styles.background);
+  }
+
+  const combinedStyles = {
+    ...styles,
+    background: background
+  };
+
+  
+  return (
+    <div style={combinedStyles}>
+      <h3>react-multi-email</h3>
+      <ReactMultiEmail
+        placeholder="Input your Email Address"
+        onFocus={onFocusFunc}
+        emails={emails}
+        onChange={(_emails: string[]) => {
+          setEmails(_emails);
+        }}
+        getLabel={(
+          email: string,
+          index: number,
+          removeEmail: (index: number) => void
+        ) => {
+          return (
+            <div data-tag key={index}>
+              {email}
+              <span data-tag-handle onClick={() => removeEmail(index)}>
+                ×
+              </span>
+            </div>
+          );
+        }}
+      />
+      <br />
+      <h4>react-multi-email value</h4>
+      <p>{emails.join(", ") || "empty"}</p>
+    </div>
+  );
+}
+```
+
+### Specific Code
+
+```tsx title="ReactMultiEmail.tsx"
+const onFocusFunc = () => {
+    // what you want to do  when it is focused
+}
+
+return(
+    <ReactMultiEmail
+        onFocus={onFocusFunc}
+    />
+);
+```
+

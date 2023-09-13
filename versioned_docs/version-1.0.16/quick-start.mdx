@@ -44,27 +44,41 @@ Type directly into the form below and press Enter.
 
 <BasicExample />
 
-And look at how it can be imported into your project.
 <br/><br/>
 
-## Useage
+## Code
 
-### Import
+How it can be imported into your project?
+The following code is the full code for the basic example. <br/>
+```emails```, ```onChange```, ```getLabel``` are an essential ```props``` in implementing **react-multi-email**. <br/>
+We'll find out more about ```props``` later.
 
-```typescript title="ReactMultiEmail.tsx"
+### Usage - Basic example
+
+```tsx title="App.tsx"
 import * as React from 'react';
+// import react-multi-email
 import { ReactMultiEmail } from 'react-multi-email';
 import 'react-multi-email/dist/style.css';
-```
 
-### Components
+// styles is not necessary to use
+const styles = {
+  fontFamily: "sans-serif",
+  width: "500px",
+  border: "1px solid rgb(238, 238, 238)",
+  background: "rgb(243, 243, 243)",
+  padding: "25px",
+  margin: "20px",
+  color: "black",
+};
 
-```typescript title="ReactMultiEmail.tsx"
 export default function BasicExample () {
   const [emails, setEmails] = React.useState<string[]>([]);
   return (
     <div style={styles}>
       <h3>react-multi-email</h3>
+
+      // react-multi-email component
       <ReactMultiEmail
         placeholder="Input your Email Address"
         emails={emails}
@@ -86,6 +100,7 @@ export default function BasicExample () {
           );
         }}
       />
+
       <br />
       <h4>react-multi-email value</h4>
       <p>{emails.join(", ") || "empty"}</p>
@@ -93,13 +108,4 @@ export default function BasicExample () {
   );
 }
 
-const styles = {
-  fontFamily: "sans-serif",
-  width: "500px",
-  border: "1px solid rgb(238, 238, 238)",
-  background: "rgb(243, 243, 243)",
-  padding: "25px",
-  margin: "20px",
-  color: "black",
-};
-  ```
+```
