@@ -27,16 +27,6 @@ import * as React from 'react';
 import { ReactMultiEmail } from 'react-multi-email';
 import 'react-multi-email/dist/style.css';
 
-const styles = {
-  fontFamily: "sans-serif",
-  width: "500px",
-  border: "1px solid rgb(238, 238, 238)",
-  background: "rgb(243, 243, 243)",
-  padding: "25px",
-  margin: "20px",
-  color: "black",
-};
-
 export default function placeholder () {
   const [emails, setEmails] = React.useState<string[]>([]);
   return (
@@ -70,6 +60,16 @@ export default function placeholder () {
     </div>
   );
 }
+
+const styles = {
+  fontFamily: "sans-serif",
+  width: "500px",
+  border: "1px solid rgb(238, 238, 238)",
+  background: "rgb(243, 243, 243)",
+  padding: "25px",
+  margin: "20px",
+  color: "black",
+};
 ```
 
 ### Specific code
