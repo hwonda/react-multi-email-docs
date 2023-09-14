@@ -1,18 +1,19 @@
 ---
 sidebar_position: 1
+description: Provide a guide to the text area
 ---
 
-```Placeholder``` is one of the most basic features, and can **provide a guide** to the text field.
+`Placeholder` is one of the most basic features, and can **provide a guide** to the text area.
 
 You can just replace the string in the placeholder props.
 
-import Placeholder from '../../../static/components/Placeholder'
+import Placeholder from '../../../src/examples/Placeholder'
 
 ## About placeholder
 
-- Property: ```placeholder```<br/>
-- default: ```''```<br/>
-- type: ```string``` | ```React.ReactNode```
+- Property: `placeholder`<br/>
+- default: `''`<br/>
+- type: `string` | `React.ReactNode`
 
 ## Demo
 
@@ -27,7 +28,7 @@ import * as React from 'react';
 import { ReactMultiEmail } from 'react-multi-email';
 import 'react-multi-email/dist/style.css';
 
-export default function placeholder () {
+export default function multiEmail () {
   const [emails, setEmails] = React.useState<string[]>([]);
   return (
     <div style={styles}>

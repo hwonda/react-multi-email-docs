@@ -1,25 +1,26 @@
 ---
 sidebar_position: 2
+description: Auto focusing on the text area at first loaded
 ---
 
-```autoFocus``` is a feature that focuses on the text area when the page is first loaded. 
+`autoFocus` is a feature that focuses on the text area when the page is first loaded. 
 
 If it is set to true as shown in the above code, it will be automatically focused.
 
-import AutoFocus from '../../../static/components/AutoFocus'
+import AutoFocus from '../../../src/examples/AutoFocus'
 
 ## About autoFocus
 
-- Property: ```autoFocus```<br/>
-- default: ```false```<br/>
-- type: ```boolean``` 
+- Property: `autoFocus`<br/>
+- default: `false`<br/>
+- type: `boolean` 
 
 ## Demo
 
 <AutoFocus />
 
-:::warning Must check!
-This page is configured with ```mdx``` and **may not appear to be working**. To check the function, set it up directly in demo or reload the page via ```F5``` or ```Ctrl(Command)+Shift+R```.
+:::caution Must check!
+This page is configured with `mdx` and **may not appear to be working**. To check the function, set it up directly in demo or reload the page via `F5` or `Ctrl(Command)+Shift+R`.
 :::
 
 ## Code
@@ -31,7 +32,7 @@ import * as React from 'react';
 import { ReactMultiEmail } from 'react-multi-email';
 import 'react-multi-email/dist/style.css';
 
-export default function placeholder () {
+export default function multiEmail () {
   const [emails, setEmails] = React.useState<string[]>([]);
   return (
     <div style={styles}>

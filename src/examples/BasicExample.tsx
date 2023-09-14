@@ -1,16 +1,6 @@
 import * as React from 'react';
-import { ReactMultiEmail } from '../../src/components/React-multi-email/ReactMultiEmail';
+import { ReactMultiEmail } from '../components/React-multi-email';
 import'../../src/components/React-multi-email/style.css';
-
-const styles = {
-  fontFamily: "sans-serif",
-  width: "500px",
-  border: "1px solid rgb(238, 238, 238)",
-  background: "rgb(243, 243, 243)",
-  padding: "25px",
-  margin: "20px",
-  color: "black",
-};
 
 export default function BasicExample () {
   const [emails, setEmails] = React.useState<string[]>([]);
@@ -44,3 +34,13 @@ export default function BasicExample () {
     </div>
   );
 }
+
+const styles = {
+  fontFamily: "sans-serif",
+  width: "500px",
+  border: "1px solid rgb(238, 238, 238)",
+  background: "rgb(243, 243, 243)",
+  padding: "25px",
+  margin: "20px",
+  color: "black",
+};

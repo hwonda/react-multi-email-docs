@@ -1,26 +1,27 @@
 ---
 sidebar_position: 3
+description: Run function when focused in the text area
 ---
 
 OnFocus can specify the function to execute **if it is focused in the text area.** 
 
 The example expresses the function **replace the background color to red if focused.**
 
-import OnFocus from '../../../static/components/OnFocus'
+import OnFocus from '../../../src/examples/OnFocus'
 
 ## About onFocus
 
-- Property: ```onFocus```<br/>
-- default: ```None```<br/>
-- type: ```() => void;```
+- Property: `onFocus`<br/>
+- default: `None`<br/>
+- type: `() => void;`
 
 ## Demo
 
 <OnFocus />
 
-:::tip onFocus
-**'onFocus'** prop **runs only when it is focused.**
-If you want to execute function when it is focused out, use the next **prop 'onBlur'**
+:::info
+`onFocus` prop **runs only when it is focused.**
+If you want to execute function when it is focused out, use the next prop `onBlur`
 :::
 
 ## Code
@@ -32,7 +33,7 @@ import * as React from 'react';
 import { ReactMultiEmail } from 'react-multi-email';
 import 'react-multi-email/dist/style.css';
 
-export default function placeholder () {
+export default function multiEmail () {
   const [emails, setEmails] = React.useState<string[]>([]);
   const [background, setBackground] = React.useState(styles.background);
 
@@ -96,7 +97,7 @@ const styles = {
 
 ```tsx title="ReactMultiEmail.tsx"
 const onFocusFunc = () => {
-    // what you want to do  when it is focused
+    // what you want to do when it is focused
 }
 
 return(
