@@ -1,0 +1,83 @@
+---
+sidebar_position: 5
+title: style
+description: Customize style
+---
+
+You can easily give your own style of the text area using `style`. Please refer to the information below.<br/>
+
+import StyleExam from '../../../src/examples/StyleExam'
+
+## About style
+
+- Property: `style`<br/>
+- default: `false`<br/>
+- type: `boolean` 
+
+## Demo
+
+<StyleExam />
+
+## Code
+
+### Whole code
+
+```tsx title="style.tsx"
+import * as React from 'react';
+import { ReactMultiEmail } from 'react-multi-email';
+import 'react-multi-email/dist/style.css';
+
+export default function multiEmail () {
+  const [emails, setEmails] = React.useState<string[]>([]);
+  return (
+    <div style={styles}>
+      <h3>react-multi-email</h3>
+      <ReactMultiEmail
+        placeholder="Input your Email Address"
+        // custom style
+        style={{ border: '1px solid red', marginLeft: '1rem', width: '300px' }}
+        emails={emails}
+        onChange={(_emails: string[]) => {
+          setEmails(_emails);
+        }}
+        getLabel={(
+          email: string,
+          index: number,
+          removeEmail: (index: number) => void
+        ) => {
+          return (
+            <div data-tag key={index}>
+              {email}
+              <span data-tag-handle onClick={() => removeEmail(index)}>
+                ×
+              </span>
+            </div>
+          );
+        }}
+      />
+      <br />
+      <h4>react-multi-email value</h4>
+      <p>{emails.join(", ") || "empty"}</p>
+    </div>
+  );
+}
+
+const styles = {
+  fontFamily: "sans-serif",
+  width: "500px",
+  border: "1px solid rgb(238, 238, 238)",
+  background: "rgb(243, 243, 243)",
+  padding: "25px",
+  margin: "20px",
+  color: "black",
+};
+```
+
+### Specific code
+
+```tsx title="style.tsx"
+<ReactMultiEmail 
+  style={{ border: '1px solid red', marginLeft: '1rem', width: '300px'}}
+/>
+```
+
