@@ -4,12 +4,25 @@ sidebar_position: 2
 
 # Quick Start
 
-:partying_face: Welcome to **React-multi-email**! <br/>This open source will provide a good solution for your project to enter multiple email addresses.
+:partying_face: **Welcome to React-multi-email**! <br/>
+**React-multi-email** is simple `REACT` component to **format multiple email** as the user types.<br/>
+It will provide a good solution for your project to enter multiple email addresses.
+
+- Simple code
+- No dependency
+- Small size
+- Simple customization
+
+[![](https://img.shields.io/npm/dm/react-multi-email.svg)](https://www.npmjs.com/package/react-multi-email)
+:point_left: Many people use our open source every month. <br/>
+[![](https://img.shields.io/github/stars/axisj/react-multi-email)](https://github.com/axisj/react-multi-email)
+:point_left: If you don't mind, please give us a :star:  <br/><br/>
+:hugging_face: Your expertise could greatly benefit both the community and the future of this project. Please consider contributing. We are always waiting for your [pull request](https://github.com/axisj/react-multi-email/pulls).
 <br/>
 
 ## Getting Started
 
-You can apply **react-multi-email** feature to project in :alarm_clock:3 minutes!
+You can apply **react-multi-email** feature to project in :alarm_clock: 3 minutes!
 
 ### Requirements
 
@@ -38,7 +51,7 @@ import BasicExample from '../../src/examples/BasicExample'
 
 ## Basic example
 
-As you can see in the [Demo](./play-ground.md) version, react-multi-mail has the following form.
+As you can see in the [Demo](./play-ground.md) version, react-multi-email has the following form.
 Enter an email in the text area and press Enter to register that email address. 
 Type directly into the form below and press Enter.
 
@@ -53,7 +66,7 @@ The following code is the full code for the basic example. <br/>
 ```emails```, ```onChange```, ```getLabel``` are an essential ```props``` in implementing **react-multi-email**. <br/>
 We'll find out more about ```props``` later.
 
-### Usage - Basic example
+### Usage (Basic example)
 
 ```tsx title="App.tsx"
 import * as React from 'react';
@@ -100,8 +113,6 @@ export default function BasicExample () {
           );
         }}
       />
-
-      <br />
       <h4>react-multi-email value</h4>
       <p>{emails.join(", ") || "empty"}</p>
     </div>
