@@ -28,7 +28,6 @@ export default function multiEmail () {
           );
         }}
       />
-      <br />
       <h4>react-multi-email value</h4>
       <p>{emails.join(", ") || "empty"}</p>
     </div>
