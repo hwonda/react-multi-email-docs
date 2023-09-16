@@ -1,0 +1,96 @@
+---
+sidebar_position: 7
+description: Call when enable function returns false
+---
+
+This callback function is invoked when the `enable` function returns `false`. 
+`onDisabled` allows you to specify actions you want to execute **when a user can't add an email**.
+
+import OnDisabled from '../../../src/examples/OnDisabled'
+
+## About onDisabled
+
+- Property: `onDisabled`<br/>
+- default: `none`<br/>
+- type: `() => void;` 
+
+## Demo
+
+Below is an example of **sending a notification message** to the user when the `enabled` function returns `false`.
+
+<OnDisabled />
+
+## Code
+
+### Whole code
+
+```tsx title="onDisabled.tsx"
+import * as React from 'react';
+import { ReactMultiEmail } from 'react-multi-email';
+import 'react-multi-email/dist/style.css';
+
+export default function multiEmail () {
+  const [emails, setEmails] = React.useState<string[]>([]);
+  const onDisabledFunc = () => {
+    alert("You can't add more emails!");   
+  }
+  
+  return (
+    <div style={styles}>
+      <h3>react-multi-email</h3>
+      <ReactMultiEmail
+        placeholder="Input your Email Address"
+        enable={({ emailCnt }) => emailCnt < 2}
+        // onDisabled prop
+        onDisabled={() => onDisabledFunc()}
+        emails={emails}
+        onChange={(_emails: string[]) => {
+          setEmails(_emails);
+        }}
+        getLabel={(
+          email: string,
+          index: number,
+          removeEmail: (index: number) => void
+        ) => {
+          return (
+            <div data-tag key={index}>
+              {email}
+              <span data-tag-handle onClick={() => removeEmail(index)}>
+                ×
+              </span>
+            </div>
+          );
+        }}
+      />
+      <h4>react-multi-email value</h4>
+      <p>{emails.join(", ") || "empty"}</p>
+    </div>
+  );
+}
+
+const styles = {
+  fontFamily: "sans-serif",
+  width: "500px",
+  border: "1px solid rgb(238, 238, 238)",
+  background: "rgb(243, 243, 243)",
+  padding: "25px",
+  margin: "20px",
+  color: "black",
+};
+```
+
+### Specific code
+
+```tsx title="onDisabled.tsx"
+const onDisabledFunc = () => {
+  // Do something
+}
+
+<ReactMultiEmail 
+  onDisabled={() => onDisabledFunc()}
+/>
+```
+
+:::info
+`OnDisabled` is always used with `enable`.
+:::

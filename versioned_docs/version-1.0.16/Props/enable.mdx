@@ -1,0 +1,85 @@
+---
+sidebar_position: 6
+description: Determines the number of emails a user can add
+---
+
+This prop determines **whether a user can add an email**. 
+The `emailCnt` parameter represents **the current count of added emails**. 
+If this function returns `true`, an email can be added. If it returns `false`, an email cannot be added.
+
+import Enable from '../../../src/examples/Enable'
+
+## About enable
+
+- Property: `enable`<br/>
+- default: `none`<br/>
+- type: `({ emailCnt }: { emailCnt: number }) => boolean;` 
+
+## Demo
+
+The example below prevents you from adding more than **two(2) emails**. You can limit any number of inputs.
+
+<Enable />
+
+## Code
+
+### Whole code
+
+```tsx title="enable.tsx"
+import * as React from 'react';
+import { ReactMultiEmail } from 'react-multi-email';
+import 'react-multi-email/dist/style.css';
+
+export default function multiEmail () {
+  const [emails, setEmails] = React.useState<string[]>([]);
+  return (
+    <div style={styles}>
+      <h3>react-multi-email</h3>
+      <ReactMultiEmail
+        placeholder="Input your Email Address"
+        // enable prop
+        enable={({ emailCnt }) => emailCnt < 2}
+        emails={emails}
+        onChange={(_emails: string[]) => {
+          setEmails(_emails);
+        }}
+        getLabel={(
+          email: string,
+          index: number,
+          removeEmail: (index: number) => void
+        ) => {
+          return (
+            <div data-tag key={index}>
+              {email}
+              <span data-tag-handle onClick={() => removeEmail(index)}>
+                ×
+              </span>
+            </div>
+          );
+        }}
+      />
+      <h4>react-multi-email value</h4>
+      <p>{emails.join(", ") || "empty"}</p>
+    </div>
+  );
+}
+
+const styles = {
+  fontFamily: "sans-serif",
+  width: "500px",
+  border: "1px solid rgb(238, 238, 238)",
+  background: "rgb(243, 243, 243)",
+  padding: "25px",
+  margin: "20px",
+  color: "black",
+};
+```
+
+### Specific code
+
+```tsx title="enable.tsx"
+<ReactMultiEmail 
+  enable={({ emailCnt }) => emailCnt < NUMBER }
+/>
+```
+
