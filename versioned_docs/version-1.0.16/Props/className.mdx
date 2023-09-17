@@ -1,0 +1,96 @@
+---
+sidebar_position: 8
+description: add custom class name to the root <div> element
+---
+
+The `className` prop is used to provide an **additional CSS class name** to the **root `div` element** of the component. 
+By doing so, you can easily modify the style of the component externally.
+
+import ClassName from '../../../src/examples/ClassName'
+
+## About className
+
+- Property: `className`<br/>
+- default: `''`<br/>
+- type: `string` 
+
+## Demo
+
+<ClassName />
+
+:::info
+Open developer mode and check class name.<br/>
+You can see that the class name is given as shown in the picture below.
+:::
+
+## Result
+
+![My Image](./images/className.png)
+
+:::tip
+If the text area is empty, the `div` element will have the class name `empty`.
+:::
+
+## Code
+
+### Whole code
+
+```tsx title="className.tsx"
+import * as React from 'react';
+import { ReactMultiEmail } from 'react-multi-email';
+import 'react-multi-email/dist/style.css';
+
+export default function multiEmail () {
+  const [emails, setEmails] = React.useState<string[]>([]);
+  
+  return (
+    <div style={styles}>
+      <h3>react-multi-email</h3>
+      <ReactMultiEmail
+        // className prop
+        className="customClassName"
+        placeholder="Input your Email Address"
+        emails={emails}
+        onChange={(_emails: string[]) => {
+          setEmails(_emails);
+        }}
+        getLabel={(
+          email: string,
+          index: number,
+          removeEmail: (index: number) => void
+        ) => {
+          return (
+            <div data-tag key={index}>
+              {email}
+              <span data-tag-handle onClick={() => removeEmail(index)}>
+                ×
+              </span>
+            </div>
+          );
+        }}
+      />
+      <h4>react-multi-email value</h4>
+      <p>{emails.join(", ") || "empty"}</p>
+    </div>
+  );
+}
+
+const styles = {
+  fontFamily: "sans-serif",
+  width: "500px",
+  border: "1px solid rgb(238, 238, 238)",
+  background: "rgb(243, 243, 243)",
+  padding: "25px",
+  margin: "20px",
+  color: "black",
+};
+
+```
+
+### Specific code
+
+```tsx title="onDisabled.tsx"
+<ReactMultiEmail
+  className="customClassName"
+/>
+```
