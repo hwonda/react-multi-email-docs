@@ -10,4 +10,4 @@ If you want to try the **demo** version first, click :point_right: **[Demo](http
 
 ![play-ground](./img/playground.gif) 
 
-This open source will provide a good solution for your project to enter multiple email addresses.
+This open source will provide a good solution for your project for entering multiple email addresses.

@@ -6,7 +6,7 @@ sidebar_position: 2
 
 :partying_face: **Welcome to React-multi-email**! <br/>
 **React-multi-email** is simple `REACT` component to **format multiple email** as the user types.<br/>
-It will provide a good solution for your project to enter multiple email addresses.
+It will provide a good solution for your project for entering multiple email addresses.
 
 - Simple code
 - No dependency
@@ -22,7 +22,7 @@ It will provide a good solution for your project to enter multiple email address
 
 ## Getting Started
 
-You can apply **react-multi-email** feature to project in :alarm_clock: 3 minutes!
+You can apply **react-multi-email** feature to project in about :alarm_clock: 3 minutes!
 
 ### Requirements
 
@@ -74,24 +74,13 @@ import * as React from 'react';
 import { ReactMultiEmail } from 'react-multi-email';
 import 'react-multi-email/dist/style.css';
 
-// styles is not necessary to use
-const styles = {
-  fontFamily: "sans-serif",
-  width: "500px",
-  border: "1px solid rgb(238, 238, 238)",
-  background: "rgb(243, 243, 243)",
-  padding: "25px",
-  margin: "20px",
-  color: "black",
-};
-
 export default function BasicExample () {
   const [emails, setEmails] = React.useState<string[]>([]);
   return (
     <div style={styles}>
       <h3>react-multi-email</h3>
 
-      // react-multi-email component
+      {/* ---ReactMultiEmail component--- */}
       <ReactMultiEmail
         placeholder="Input your Email Address"
         emails={emails}
@@ -113,10 +102,23 @@ export default function BasicExample () {
           );
         }}
       />
+      {/* ------------------------------ */}
+
       <h4>react-multi-email value</h4>
       <p>{emails.join(", ") || "empty"}</p>
     </div>
   );
 }
+
+// styles is not necessary to use
+const styles = {
+  fontFamily: "sans-serif",
+  width: "500px",
+  border: "1px solid rgb(238, 238, 238)",
+  background: "rgb(243, 243, 243)",
+  padding: "25px",
+  margin: "20px",
+  color: "black",
+};
 
 ```
