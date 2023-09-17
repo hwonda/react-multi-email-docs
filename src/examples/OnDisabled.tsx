@@ -14,8 +14,8 @@ export default function multiEmail () {
       <ReactMultiEmail
         placeholder="Input your Email Address"
         enable={({ emailCnt }) => emailCnt < 2}
+        // onDisabled prop
         onDisabled={() => onDisabledFunc()}
-      
         emails={emails}
         onChange={(_emails: string[]) => {
           setEmails(_emails);
