@@ -1,0 +1,119 @@
+---
+sidebar_position: 10
+description: Create own validation for the email address
+---
+
+The `validateEmail` prop of `react-multi-email` is used for validating the entered email address. <br/>
+While the component provides a `basic email validation`([isEmail.tsx](https://github.com/axisj/react-multi-email/blob/master/react-multi-email/isEmail.tsx)) out of the box, 
+you can provide **your own custom validation logic** using the `validateEmail` prop in case you have specific criteria or scenarios for validation.
+
+The type of the `validateEmail` prop is `(email: string) => boolean | Promise<boolean>`. This means the function can either return a boolean value synchronously or return a `Promise<boolean>` asynchronously.
+
+import ValidateEmail from '../../../src/examples/ValidateEmail'
+
+## About validateEmail
+
+- Property: `validateEmail`
+- Type: `(email: string) => boolean | Promise;`
+- Default: `false`
+
+## Demo
+
+<ValidateEmail />
+
+:::info
+As can be seen from the regular expressions used, for example, 
+if the **first element of the email (ID) is capitalized** or the **third element of the email (TLD) is more than four characters long**, 
+it will not be added. **Give that a try!**<br/><br/>
+:::
+
+:::tip 
+Click on the link below to learn more about regular expressions. <br/>
+[Regular Expression Tutorial(w3schools)](https://www.w3schools.com/jsref/jsref_obj_regexp.asp) <br/>
+[Regular Expression Test Site(regexr)](https://regexr.com/)
+:::
+
+## Code
+
+### Whole code
+
+```tsx title="validateEmail.tsx"
+import * as React from 'react';
+import { ReactMultiEmail } from 'react-multi-email';
+import 'react-multi-email/dist/style.css';
+
+export default function multiEmail() {
+  const [emails, setEmails] = React.useState<string[]>([]);
+
+  const validateEmailFunc = (email: string) => {
+    const emailPattern = /^[a-z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+    return emailPattern.test(email);
+  };
+
+  return (
+    <div style={styles}>
+      <h3>react-multi-email</h3>
+      <ReactMultiEmail
+        emails={emails}
+        onChange={(_emails: string[]) => {
+          setEmails(_emails);
+        }}
+        validateEmail={validateEmailFunc}
+        getLabel={(
+          email: string,
+          index: number,
+          removeEmail: (index: number) => void
+        ) => {
+          return (
+            <div data-tag key={index}>
+              {email}
+              <span data-tag-handle onClick={() => removeEmail(index)}>
+                ×
+              </span>
+            </div>
+          );
+        }}
+      />
+      <h4>react-multi-email value</h4>
+      <p>{emails.join(", ") || "empty"}</p>
+    </div>
+  );
+}
+
+const styles = {
+  fontFamily: "sans-serif",
+  width: "500px",
+  border: "1px solid rgb(238, 238, 238)",
+  background: "rgb(243, 243, 243)",
+  padding: "25px",
+  margin: "20px",
+  color: "black",
+};
+```
+
+### Specific code
+
+```tsx title="validateEmail.tsx"
+const validateEmailFunc = (email: string) => {
+  // validate email
+  // return true or false
+};
+
+<ReactMultiEmail
+  validateEmail={validateEmailFunc}
+/>
+```
+
+### Specific code (async)
+
+```tsx title="validateEmail.tsx"
+const validateEmailFunc = async (email: string) => {
+  try {
+    const response = await fetch(`https://api.example.com/validate-email?email=${email}`);
+    const data = await response.json();
+    return data.isValid;
+  } catch (error) {
+    return false;
+  }
+};
+```
