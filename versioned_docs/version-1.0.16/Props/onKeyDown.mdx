@@ -1,0 +1,121 @@
+---
+sidebar_position: 11
+description: onKeyDown triggers when a key is pressed
+---
+
+The `onKeyDown` prop is used to handle the event when a user presses down on a keyboard key.<br/>
+This callback is invoked **every time a keypress event occurs**. The `KeyboardEvent object` passed as an argument **provides detailed information** about **the specific keypress event**.
+
+This code essentially integrates the user-provided `onKeyDown` handler with [the internal logic of the component - `handleOnKeyDown`](https://github.com/axisj/react-multi-email/blob/master/react-multi-email/ReactMultiEmail.tsx), ensuring that both the component's internal behavior and any external logic associated with the `onKeyDown` prop are executed when a key is pressed.
+
+import OnKeyDown from '../../../src/examples/OnKeyDown'
+
+## About onKeyDown
+
+- Property: `onKeyDown`
+- Type: `(evt: React.KeyboardEvent) => void;`
+- Default: `()=>{}`
+
+## Demo
+
+<OnKeyDown />
+
+:::info
+`OnKeyDown` works when **the keyboard is pressed**. So it **runs before** the `onKeyUp` function.
+:::
+
+## Code
+
+### Whole code
+
+```tsx title="onKeyDown.tsx"
+import * as React from 'react';
+import { ReactMultiEmail } from 'react-multi-email';
+import 'react-multi-email/dist/style.css';
+
+export default function multiEmail() {
+  const [emails, setEmails] = React.useState<string[]>([]);
+  const [currentKeyDown, setCurrentKeyDown] = React.useState<string>("");
+
+  const onKeyDownFunc = (event: React.KeyboardEvent<HTMLInputElement>) => {
+    console.log(event.key);
+    setCurrentKeyDown(event.key);
+  };
+
+  return (
+    <div style={styles}>
+      <h3>react-multi-email</h3>
+      <ReactMultiEmail
+        emails={emails}
+        onChange={(_emails: string[]) => {
+          setEmails(_emails);
+        }}
+        onKeyDown={onKeyDownFunc}
+        getLabel={(
+          email: string,
+          index: number,
+          removeEmail: (index: number) => void
+        ) => {
+          return (
+            <div data-tag key={index}>
+              {email}
+              <span data-tag-handle onClick={() => removeEmail(index)}>
+                ×
+              </span>
+            </div>
+          );
+        }}
+      />
+      <h4>react-multi-email value</h4>
+      <p>{emails.join(", ") || "empty"}</p>
+      <div>currentKey(Down): {currentKeyDown}</div>
+    </div>
+  );
+}
+
+const styles = {
+  fontFamily: "sans-serif",
+  width: "500px",
+  border: "1px solid rgb(238, 238, 238)",
+  background: "rgb(243, 243, 243)",
+  padding: "25px",
+  margin: "20px",
+  color: "black",
+};
+
+```
+
+### Specific code
+
+```tsx title="onKeyDown.tsx"
+const onKeyDownFunc = (event: React.KeyboardEvent<HTMLInputElement>) => {
+  // do something
+};
+
+<ReactMultiEmail
+  onKeyDown={onKeyDownFunc}
+/>
+```
+
+### Internal logic code (handleOnKeyDown)
+
+```tsx title="ReactMultiEmail.tsx"
+const handleOnKeydown = React.useCallback(
+  (e: React.KeyboardEvent<HTMLInputElement>) => {
+    onKeyDown?.(e);
+
+    switch (e.key) {
+      case 'Enter':
+        e.preventDefault();
+        break;
+      case 'Backspace':
+        if (!e.currentTarget.value) {
+          removeEmail(emails.length - 1, false);
+        }
+        break;
+      default:
+    }
+  },
+  [emails.length, onKeyDown, removeEmail],
+);
+```
