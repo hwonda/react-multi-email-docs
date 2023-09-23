@@ -1,0 +1,100 @@
+---
+sidebar_position: 9
+description: autoComplete prop enables automatic input completion.
+---
+
+
+The `autoComplete` prop inside the react-multi-email component **directly maps** to the `autoComplete` attribute of the **HTML `input` element**. 
+This allows the browser to remember the email addresses previously entered by the user, 
+enabling quick selection of previously entered values in the same email `input` field.
+
+- `on`: Activates the auto-complete feature, suggesting values previously entered by the user.
+- `off`: Deactivates the auto-complete feature.
+
+import AutoComplete from '../../../src/examples/AutoComplete'
+
+## About autoComplete
+
+- Property: `autoComplete`
+- Type: `string | undefined`
+- Default: `undefined`
+
+## Demo
+
+<AutoComplete />
+
+## Result
+
+![My Image](./images/autoComplete.png)
+
+:::caution
+In `HTML`, the content for auto-fill(autoComplete) varies based on the `type` attribute. However, in react-multi-email, you can set this using the `id` attribute. 
+The example below is the component will auto-fill email addresses by setting `id="email"`.
+
+For more information on HTML's autocomplete functionality and its types, please refer to the provided link:<br/>
+[HTML autocomplete attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete)
+:::
+
+## Code
+
+### Whole code
+
+```tsx title="autoComplete.tsx"
+import * as React from 'react';
+import { ReactMultiEmail } from 'react-multi-email';
+import 'react-multi-email/dist/style.css';
+
+export default function multiEmail() {
+  const [emails, setEmails] = React.useState<string[]>([]);
+
+  return (
+    <div style={styles}>
+      <h3>react-multi-email</h3>
+      <ReactMultiEmail
+        // autoComplete prop
+        autoComplete='on'
+        id="email"
+        emails={emails}
+        onChange={(_emails: string[]) => {
+          setEmails(_emails);
+        }}
+        getLabel={(
+          email: string,
+          index: number,
+          removeEmail: (index: number) => void
+        ) => {
+          return (
+            <div data-tag key={index}>
+              {email}
+              <span data-tag-handle onClick={() => removeEmail(index)}>
+                ×
+              </span>
+            </div>
+          );
+        }}
+      />
+      <h4>react-multi-email value</h4>
+      <p>{emails.join(", ") || "empty"}</p>
+    </div>
+  );
+}
+
+const styles = {
+  fontFamily: "sans-serif",
+  width: "500px",
+  border: "1px solid rgb(238, 238, 238)",
+  background: "rgb(243, 243, 243)",
+  padding: "25px",
+  margin: "20px",
+  color: "black",
+};
+```
+
+### Specific code
+
+```tsx title="autoComplete.tsx"
+<ReactMultiEmail
+  autoComplete='on'
+  // id="email"
+/>
+```
