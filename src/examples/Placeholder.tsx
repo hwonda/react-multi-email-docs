@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { ReactMultiEmail } from '../../src/components/React-multi-email';
-import'../../src/components/React-multi-email/style.css';
+import { ReactMultiEmail } from '../components/React-multi-email';
+import'../components/React-multi-email/style.css';
 
 export default function multiEmail () {
   const [emails, setEmails] = React.useState<string[]>([]);
