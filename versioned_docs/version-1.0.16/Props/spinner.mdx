@@ -1,0 +1,111 @@
+---
+sidebar_position: 13
+description: Spinner
+---
+
+The `spinner` prop is provided in the react-multi-email component to visually represent the loading status to the user when the email address is being validated asynchronously (i.e., **when validateEmail returns a Promise**). 
+
+However, this spinner is only **activated** when `enableSpinner` is set to `true`. 
+Through the `spinner` function, users can render a custom loading interface.
+
+import Spinner from '../../../src/examples/Spinner'
+
+## About spinner & enableSpinner
+
+### spinner
+
+- Property: `spinner`
+- Type: `() => React.ReactNode`
+- Default: `() => {}`
+
+### enableSpinner
+
+- Property: `enableSpinner`
+- Type: `boolean`
+- Default: `false`
+
+## Demo
+
+<Spinner />
+
+:::caution
+The asynchronous validation illustrated in the **example isn't connected to a functional API**.<br/>
+Thus, when an email is entered, the `spinner` will continue to **run indefinitely**.
+:::
+
+## Code
+
+### Whole code
+
+```tsx title="spinner.tsx"
+import * as React from 'react';
+import { ReactMultiEmail } from 'react-multi-email';
+import 'react-multi-email/dist/style.css';
+
+export default function multiEmail() {
+  const [emails, setEmails] = React.useState<string[]>([]);
+
+  const validateEmailFunc = async (email: string) => {
+    try {
+      const response = await fetch(`https://api.example.com/validate-email?email=${email}`);
+      const data = await response.json();
+      return data.isValid;
+    } catch (error) {
+      return false;
+    }
+  };
+
+  return (
+    <div style={styles}>
+      <h3>react-multi-email</h3>
+      <ReactMultiEmail
+        // enableSpinner & spinner props
+        enableSpinner={true}
+        spinner={() => <div>Loading...</div>}
+        validateEmail={validateEmailFunc}
+        emails={emails}
+        onChange={(_emails: string[]) => {
+          setEmails(_emails);
+        }}
+        getLabel={(
+          email: string,
+          index: number,
+          removeEmail: (index: number) => void
+        ) => {
+          return (
+            <div data-tag key={index}>
+              {email}
+              <span data-tag-handle onClick={() => removeEmail(index)}>
+                ×
+              </span>
+            </div>
+          );
+        }}
+      />
+      <h4>react-multi-email value</h4>
+      <p>{emails.join(", ") || "empty"}</p>
+    </div>
+  );
+}
+
+const styles = {
+  fontFamily: "sans-serif",
+  width: "500px",
+  border: "1px solid rgb(238, 238, 238)",
+  background: "rgb(243, 243, 243)",
+  padding: "25px",
+  margin: "20px",
+  color: "black",
+};
+
+```
+
+### Specific code
+
+```tsx title="spinner.tsx"
+<ReactMultiEmail
+  enableSpinner={true}
+  spinner={()=>{ return(<div>Loading...</div>)}}
+/>
+```
+
