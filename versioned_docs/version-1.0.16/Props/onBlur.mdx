@@ -47,9 +47,10 @@ export default function multiEmail () {
     <div style={combinedStyles}>
       <h3>react-multi-email</h3>
       <ReactMultiEmail
+        // onBlur prop
+        onBlur={onBlurFunc}
         placeholder="Input your Email Address"
         onFocus={onFocusFunc}
-        onBlur={onBlurFunc}
         emails={emails}
         onChange={(_emails: string[]) => {
           setEmails(_emails);
@@ -90,7 +91,7 @@ const styles = {
 
 ```tsx title="onBlur.tsx"
 const onBlurFunc = () => {
-    // what you want to do when it is out of focus
+    // do something
 }
 
 return(

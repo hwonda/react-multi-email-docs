@@ -1,10 +1,12 @@
 ---
-sidebar_position: 14
+sidebar_position: 12
 description: onChangeInput is triggered whenever the input field's value change
 ---
 
 The `onChangeInput` prop is a callback function invoked each time a user types into the internal `input` field. 
-This callback is **useful for providing immediate feedback or processing input values as the user types.**<br/>
+
+This callback is **useful for providing immediate feedback or processing input values as the user types.**
+
 The function specified for this prop is triggered **whenever the input field's value changes** and **receives the current input value as its argument**. 
 This allows **tracking of real-time input** and the ability to **apply necessary logic or actions based on that input**.
 
@@ -38,6 +40,7 @@ export default function multiEmail() {
   const [inputStyle, setInputStyle] = React.useState<React.CSSProperties>({});
 
   const handleInputChange = (value: string) => {
+    // simple validation example
     const isValidEmail = /\S+@\S+\.\S+/.test(value);
     if (!isValidEmail && value) {
       setInputStyle({ borderColor: 'red' });
@@ -50,6 +53,7 @@ export default function multiEmail() {
     <div style={styles}>
       <h3>react-multi-email</h3>
       <ReactMultiEmail
+        // onChangeInput prop
         onChangeInput={handleInputChange}
         style={inputStyle}
         emails={emails}

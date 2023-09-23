@@ -54,8 +54,9 @@ export default function multiEmail () {
     <div style={combinedStyles}>
       <h3>react-multi-email</h3>
       <ReactMultiEmail
-        placeholder="Input your Email Address"
+        // onFocus prop
         onFocus={onFocusFunc}
+        placeholder="Input your Email Address"
         emails={emails}
         onChange={(_emails: string[]) => {
           setEmails(_emails);
@@ -96,7 +97,7 @@ const styles = {
 
 ```tsx title="ReactMultiEmail.tsx"
 const onFocusFunc = () => {
-    // what you want to do when it is focused
+    // do something
 }
 
 return(

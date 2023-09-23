@@ -1,9 +1,10 @@
 ---
-sidebar_position: 11
+sidebar_position: 13
 description: onKeyDown triggers when a key is pressed
 ---
 
-The `onKeyDown` prop is used to handle the event when a user presses down on a keyboard key.<br/>
+The `onKeyDown` prop is used to handle the event when a user presses down on a keyboard key.
+
 This callback is invoked **every time a keypress event occurs**. The `KeyboardEvent object` passed as an argument **provides detailed information** about **the specific keypress event**.
 
 This code essentially integrates the user-provided `onKeyDown` handler with [the internal logic of the component - `handleOnKeyDown`](https://github.com/axisj/react-multi-email/blob/master/react-multi-email/ReactMultiEmail.tsx), ensuring that both the component's internal behavior and any external logic associated with the `onKeyDown` prop are executed when a key is pressed.
@@ -14,7 +15,7 @@ import OnKeyDown from '../../../src/examples/OnKeyDown'
 
 - Property: `onKeyDown`
 - Type: `(evt: React.KeyboardEvent) => void;`
-- Default: `()=>{}`
+- Default: `() => {}`
 
 ## Demo
 
@@ -46,11 +47,12 @@ export default function multiEmail() {
     <div style={styles}>
       <h3>react-multi-email</h3>
       <ReactMultiEmail
+        // onKetDown prop
+        onKeyDown={onKeyDownFunc}
         emails={emails}
         onChange={(_emails: string[]) => {
           setEmails(_emails);
         }}
-        onKeyDown={onKeyDownFunc}
         getLabel={(
           email: string,
           index: number,
