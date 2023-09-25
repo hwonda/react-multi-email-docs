@@ -1,5 +1,5 @@
 ---
-sidebar_position: 8
+sidebar_position: 6
 title: noClass
 description: add custom class name to the root <div> element
 ---
@@ -8,10 +8,9 @@ description: add custom class name to the root <div> element
 
 If `noClass` is set to `true`, the default class name `react-multi-email` won't be included. On the other hand, if `noClass` is `false` or **not set**, the `react-multi-email` class will be added to that `div` element.<br/>
 
-This functionality exists so that you can opt out of the default styling of the react-multi-email component if they wish. By setting the noClass prop to true, **you can deactivate the default styling and apply their own custom styles.**
+This functionality exists so that you can opt out of the default styling of the reactMultiEmail component if they wish. By setting the noClass prop to true, **you can deactivate the default styling and apply their own custom styles.**
 
-
-import NoClass from '../../../src/examples/NoClass'
+<br/>
 
 ## About noClass
 
@@ -19,7 +18,11 @@ import NoClass from '../../../src/examples/NoClass'
 - Type: `boolean`
 - Default: `false`
 
+<br/>
+
 ## Demo
+
+import NoClass from '../../../src/examples/NoClass'
 
 <NoClass />
 
@@ -27,6 +30,8 @@ import NoClass from '../../../src/examples/NoClass'
 Open developer mode and check class name. There is a difference in style because the default class(`react-multi-email`) is not applied.<br/>
 You can see that the class name is not specified in the picture below.
 :::
+
+<br/>
 
 ## Result
 
@@ -36,11 +41,13 @@ You can see that the class name is not specified in the picture below.
 If the text area is empty, the `div` element will have the class name `empty`.
 :::
 
+<br/>
+
 ## Code
 
-### Whole code
+### Full code
 
-```tsx title="noClass.tsx"
+```tsx title="NoClass.tsx"
 import * as React from 'react';
 import { ReactMultiEmail } from 'react-multi-email';
 import 'react-multi-email/dist/style.css';
@@ -54,6 +61,7 @@ export default function multiEmail () {
       <ReactMultiEmail
         // noClass prop
         noClass={true}
+        placeholder="Input your Email Address"
         emails={emails}
         onChange={(_emails: string[]) => {
           setEmails(_emails);
@@ -90,10 +98,11 @@ const styles = {
 };
 ```
 
-### Specific code
+### Code snippet
 
-```tsx title="onDisabled.tsx"
+```tsx title="NoClass.tsx"
 <ReactMultiEmail
   noClass={true}
+  // other props...
 />
 ```

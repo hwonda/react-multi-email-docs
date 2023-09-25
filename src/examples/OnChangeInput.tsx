@@ -20,6 +20,7 @@ export default function multiEmail() {
     <div style={styles}>
       <h3>react-multi-email</h3>
       <ReactMultiEmail
+        placeholder="Input your Email Address"
         onChangeInput={handleInputChange}
         style={inputStyle}
         emails={emails}

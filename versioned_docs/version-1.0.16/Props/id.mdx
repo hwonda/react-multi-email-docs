@@ -1,15 +1,15 @@
 ---
-sidebar_position: 6
+sidebar_position: 5
 description: onKeyUp activates when a key is released.
 ---
 
-The `id` prop of the `react-multi-email` component is analogous to the `id` attribute in HTML. 
+The `id` prop of the `reactMultiEmail` component is analogous to the `id` attribute in HTML. 
 In web development, the `id` attribute is used to uniquely identify each HTML element. 
 Within the same webpage, each `id` value should be distinct.
 
-The `id` prop of the `react-multi-email` is used to set a unique identifier for the `input` element that the component renders.
+The `id` prop of the `reactMultiEmail` is used to set a unique identifier for the `input` element that the component renders.
 
-import Id from '../../../src/examples/Id'
+<br/>
 
 ## About id
 
@@ -17,9 +17,15 @@ import Id from '../../../src/examples/Id'
 - Type: `string`
 - Default: `''`
 
+<br/>
+
 ## Demo
 
+import Id from '../../../src/examples/Id'
+
 <Id />
+
+<br/>
 
 ## Result
 
@@ -29,11 +35,13 @@ import Id from '../../../src/examples/Id'
 The `id` provided as a prop is added to the **input box**.
 :::
 
+<br/>
+
 ## Code
 
-### Whole code
+### Full code
 
-```tsx title="id.tsx"
+```tsx title="Id.tsx"
 import * as React from 'react';
 import { ReactMultiEmail } from 'react-multi-email';
 import 'react-multi-email/dist/style.css';
@@ -47,6 +55,7 @@ export default function multiEmail() {
       <ReactMultiEmail
         // id prop
         id="email_field"
+        placeholder="Input your Email Address"
         emails={emails}
         onChange={(_emails: string[]) => {
           setEmails(_emails);
@@ -83,11 +92,12 @@ const styles = {
 };
 ```
 
-### Specific code
+### Code snippet
 
-```tsx title="id.tsx"
+```tsx title="Id.tsx"
 <ReactMultiEmail
   id="email_field"
+  // other props...
 />
 ```
 <br/><br/>

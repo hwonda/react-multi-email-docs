@@ -1,12 +1,12 @@
 ---
-sidebar_position: 5
+sidebar_position: 15
 title: style
 description: Customize style
 ---
 
-You can easily give your own style of the text area using `style`. <br/>
+You can easily give your own style of the text area using `style`.
 
-import StyleExam from '../../../src/examples/StyleExam'
+<br/>
 
 ## About style
 
@@ -14,17 +14,23 @@ import StyleExam from '../../../src/examples/StyleExam'
 - Type: `boolean` 
 - Default: `false`
 
+<br/>
+
 ## Demo
 
 The example below adds border, marginLeft, and width styles to the text area.
 
+import StyleExam from '../../../src/examples/StyleExam'
+
 <StyleExam />
+
+<br/>
 
 ## Code
 
-### Whole code
+### Full code
 
-```tsx title="style.tsx"
+```tsx title="Style.tsx"
 import * as React from 'react';
 import { ReactMultiEmail } from 'react-multi-email';
 import 'react-multi-email/dist/style.css';
@@ -74,11 +80,12 @@ const styles = {
 };
 ```
 
-### Specific code
+### Code snippet
 
-```tsx title="style.tsx"
+```tsx title="Style.tsx"
 <ReactMultiEmail 
   style={{ YOUR OWN STYLE }}
+  // other props...
 />
 ```
 

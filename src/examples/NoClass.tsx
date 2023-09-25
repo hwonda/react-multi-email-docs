@@ -12,6 +12,7 @@ export default function multiEmail () {
         // noClass prop
         noClass={true}
         emails={emails}
+        placeholder="Input your Email Address"
         onChange={(_emails: string[]) => {
           setEmails(_emails);
         }}

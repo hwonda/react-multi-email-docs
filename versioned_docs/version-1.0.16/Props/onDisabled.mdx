@@ -1,12 +1,12 @@
 ---
-sidebar_position: 11
+sidebar_position: 9
 description: Call when enable function returns false
 ---
 
 This callback function is invoked when the `enable` function returns `false`. 
 `onDisabled` allows you to specify actions you want to execute **when a user can't add an email**.
 
-import OnDisabled from '../../../src/examples/OnDisabled'
+<br/>
 
 ## About onDisabled
 
@@ -14,17 +14,23 @@ import OnDisabled from '../../../src/examples/OnDisabled'
 - Type: `() => void`
 - Default: `() => {}` 
 
+<br/>
+
 ## Demo
 
 Below is an example of **sending a notification message** to the user when the `enabled` function returns `false`.
 
+import OnDisabled from '../../../src/examples/OnDisabled'
+
 <OnDisabled />
+
+<br/>
 
 ## Code
 
-### Whole code
+### Full code
 
-```tsx title="onDisabled.tsx"
+```tsx title="OnDisabled.tsx"
 import * as React from 'react';
 import { ReactMultiEmail } from 'react-multi-email';
 import 'react-multi-email/dist/style.css';
@@ -79,15 +85,16 @@ const styles = {
 };
 ```
 
-### Specific code
+### Code snippet
 
-```tsx title="onDisabled.tsx"
+```tsx title="OnDisabled.tsx"
 const onDisabledFunc = () => {
   // do something
 }
 
 <ReactMultiEmail 
   onDisabled={() => onDisabledFunc()}
+  // other props...
 />
 ```
 

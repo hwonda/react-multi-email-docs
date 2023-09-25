@@ -1,5 +1,5 @@
 ---
-sidebar_position: 14
+sidebar_position: 8
 description: onChangeInput is triggered whenever the input field's value change
 ---
 
@@ -10,7 +10,7 @@ This callback is **useful for providing immediate feedback or processing input v
 The function specified for this prop is triggered **whenever the input field's value changes** and **receives the current input value as its argument**. 
 This allows **tracking of real-time input** and the ability to **apply necessary logic or actions based on that input**.
 
-import OnChangeInput from '../../../src/examples/OnChangeInput'
+<br/>
 
 ## About onChangeInput
 
@@ -18,7 +18,11 @@ import OnChangeInput from '../../../src/examples/OnChangeInput'
 - Type: `(value: string) => void;`
 - Default: `() => {}`
 
+<br/>
+
 ## Demo
+
+import OnChangeInput from '../../../src/examples/OnChangeInput'
 
 <OnChangeInput />
 
@@ -26,11 +30,13 @@ import OnChangeInput from '../../../src/examples/OnChangeInput'
 Dynamic styling: Changes the style of the input field based on the input value. If there is an **incorrect input**, change the color of the text to **red**.
 :::
 
+<br/>
+
 ## Code
 
-### Whole code
+### Full code
 
-```tsx title="onChangeInput.tsx"
+```tsx title="OnChangeInput.tsx"
 import * as React from 'react';
 import { ReactMultiEmail } from 'react-multi-email';
 import 'react-multi-email/dist/style.css';
@@ -56,6 +62,7 @@ export default function multiEmail() {
         // onChangeInput prop
         onChangeInput={handleInputChange}
         style={inputStyle}
+        placeholder="Input your Email Address"
         emails={emails}
         onChange={(_emails: string[]) => {
           setEmails(_emails);
@@ -92,14 +99,15 @@ const styles = {
 };
 ```
 
-### Specific code
+### Code snippet
 
-```tsx title="onChangeInput.tsx"
+```tsx title="OnChangeInput.tsx"
 const handleInputChange = (value: string) => {
   // do something
 };
 
 <ReactMultiEmail
   onChangeInput={handleInputChange}
+  // other props...
 />
 ```

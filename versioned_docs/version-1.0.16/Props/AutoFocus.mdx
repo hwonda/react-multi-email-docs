@@ -1,13 +1,13 @@
 ---
 sidebar_position: 2
-description: Auto focusing on the text area at first loaded
+description: Automatically focuses on the text area when first loaded
 ---
 
-`autoFocus` is a feature that focuses on the text area when the page is first loaded. 
+The `autoFocus` prop enables automatic focusing on the text area as soon as the page loads.
 
-If it is set to true as shown in the above code, it will be automatically focused.
+When set to `true`, as demonstrated in the above code, the text area will be automatically focused upon.
 
-import AutoFocus from '../../../src/examples/AutoFocus'
+<br/>
 
 ## About autoFocus
 
@@ -15,7 +15,11 @@ import AutoFocus from '../../../src/examples/AutoFocus'
 - Type: `boolean` 
 - Default: `false`
 
+<br/>
+
 ## Demo
+
+import AutoFocus from '../../../src/examples/AutoFocus'
 
 <AutoFocus />
 
@@ -23,11 +27,13 @@ import AutoFocus from '../../../src/examples/AutoFocus'
 This page is configured with `mdx` and **may not appear to be working**. To check the function, set it up directly in demo or reload the page via `F5` or `Ctrl(Command)+Shift+R`.
 :::
 
+<br/>
+
 ## Code
 
-### Whole code
+### Full code
 
-```tsx title="autoFocus.tsx"
+```tsx title="AutoFocus.tsx"
 import * as React from 'react';
 import { ReactMultiEmail } from 'react-multi-email';
 import 'react-multi-email/dist/style.css';
@@ -76,11 +82,12 @@ const styles = {
   color: "black",
 };
 ```
-### Specific code
+### Code snippet
 
-```tsx title="autoFocus.tsx"
+```tsx title="AutoFocus.tsx"
 <ReactMultiEmail 
-    autoFocus={true}
+  autoFocus={true}
+  // other props...
 />
 ```
 

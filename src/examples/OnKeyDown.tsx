@@ -15,6 +15,7 @@ export default function multiEmail() {
     <div style={styles}>
       <h3>react-multi-email</h3>
       <ReactMultiEmail
+        placeholder="Input your Email Address"  
         emails={emails}
         onChange={(_emails: string[]) => {
           setEmails(_emails);
@@ -37,7 +38,7 @@ export default function multiEmail() {
       />
       <h4>react-multi-email value</h4>
       <p>{emails.join(", ") || "empty"}</p>
-      <div>currentKey(Down): {currentKeyDown}</div>
+      <div>currentKey(keyDown): {currentKeyDown}</div>
     </div>
   );
 }

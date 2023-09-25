@@ -11,6 +11,7 @@ export default function multiEmail() {
       <ReactMultiEmail
         autoComplete='on'
         id="email"
+        placeholder="Input your Email Address"
         emails={emails}
         onChange={(_emails: string[]) => {
           setEmails(_emails);

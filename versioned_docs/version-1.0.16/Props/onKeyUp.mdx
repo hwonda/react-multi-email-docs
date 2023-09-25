@@ -1,10 +1,10 @@
 ---
-sidebar_position: 16
+sidebar_position: 12
 description: onKeyUp activates when a key is released.
 ---
 
 
-The `onKeyUp` prop in the **react-multi-email component** is utilized to handle the event **when you releases a keyboard key after pressing it**.<br/>
+The `onKeyUp` prop in the **reactMultiEmail component** is utilized to handle the event **when you releases a keyboard key after pressing it**.<br/>
 This callback gets invoked **every time a key-up event occurs**. 
 
 The KeyboardEvent object provided as an argument contains detailed information about the specific key release event.
@@ -12,7 +12,7 @@ The KeyboardEvent object provided as an argument contains detailed information a
 This code effectively integrates the user-provided `onKeyUp` handler with [the component's internal behavior - handleOnKeyUp](https://github.com/axisj/react-multi-email/blob/master/react-multi-email/ReactMultiEmail.tsx). 
 It ensures that both the component's inherent operations and any external logic linked with the `onKeyUp` prop are executed when a key is released.
 
-import OnKeyUp from '../../../src/examples/OnKeyUp'
+<br/>
 
 ## About onKeyUp
 
@@ -20,7 +20,11 @@ import OnKeyUp from '../../../src/examples/OnKeyUp'
 - Type: `(evt: React.KeyboardEvent) => void;`
 - Default: `() => {}`
 
+<br/>
+
 ## Demo
+
+import OnKeyUp from '../../../src/examples/OnKeyUp'
 
 <OnKeyUp />
 
@@ -29,11 +33,13 @@ Because `onKeyUp` triggers when you release a key on your keyboard, it executes 
 After entering long words in the above demo, you can test this behavior by **continuously pressing** the backspace key.
 :::
 
+<br/>
+
 ## Code
 
-### Whole code
+### Full code
 
-```tsx title="onKeyUp.tsx"
+```tsx title="OnKeyUp.tsx"
 import * as React from 'react';
 import { ReactMultiEmail } from 'react-multi-email';
 import 'react-multi-email/dist/style.css';
@@ -60,6 +66,7 @@ export default function multiEmail() {
         // onKeyup prop
         onKeyUp={onKeyUpFunc}
         onKeyDown={onKeyDownFunc}
+        placeholder="Input your Email Address"
         emails={emails}
         onChange={(_emails: string[]) => {
           setEmails(_emails);
@@ -99,15 +106,16 @@ const styles = {
 
 ```
 
-### Specific code
+### Code snippet
 
-```tsx title="onKeyUp.tsx"
+```tsx title="OnKeyUp.tsx"
 const onKeyUpFunc = (event: React.KeyboardEvent<HTMLInputElement>) => {
   // do something
 };
 
 <ReactMultiEmail
   onKeyUp={onKeyUpFunc}
+  // other props...
 />
 ```
 

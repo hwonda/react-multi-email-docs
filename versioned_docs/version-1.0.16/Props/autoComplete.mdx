@@ -1,17 +1,17 @@
 ---
-sidebar_position: 9
-description: autoComplete prop enables automatic input completion.
+sidebar_position: 1
+description: The autoComplete prop facilitates automatic input completion
 ---
 
 
-The `autoComplete` prop inside the react-multi-email component **directly maps** to the `autoComplete` attribute of the **HTML `input` element**. 
-This allows the browser to remember the email addresses previously entered by the user, 
-enabling quick selection of previously entered values in the same email `input` field.
+The `autoComplete` prop within the reactMultiEmail **component corresponds** directly to the autoComplete attribute of the **HTML `input` element**, 
+allowing the browser to predict and remember the email addresses previously entered by the user. 
+This leads to quicker selection of previously entered values in the same email `input` field.
 
-- `on`: Activates the auto-complete feature, suggesting values previously entered by the user.
-- `off`: Deactivates the auto-complete feature.
+- `on`: Turns on the auto-complete feature, suggesting previously entered values by the user.
+- `off`: Turns off the auto-complete feature.
 
-import AutoComplete from '../../../src/examples/AutoComplete'
+<br/>
 
 ## About autoComplete
 
@@ -19,17 +19,23 @@ import AutoComplete from '../../../src/examples/AutoComplete'
 - Type: `string | undefined`
 - Default: `undefined`
 
+<br/><br/>
+
 ## Demo
 
+import AutoComplete from '../../../src/examples/AutoComplete'
+
 <AutoComplete />
+
+<br/>
 
 ## Result
 
 ![My Image](./images/autoComplete.png)
 
 :::caution
-In `HTML`, the content for auto-fill(autoComplete) varies based on the `type` attribute. However, in react-multi-email, you can set this using the `id` attribute. 
-The example below is the component will auto-fill email addresses by setting `id="email"`.
+In `HTML`, the content for auto-fill(`autoComplete`) varies based on the `type` attribute. However, with react-multi-email, you can achieve this using the `id` attribute.
+For instance, by setting `id="email"`, the component will auto-fill email addresses.
 :::
 
 :::tip
@@ -37,11 +43,13 @@ For more information on HTML's `autocomplete` functionality and its types, pleas
 [HTML autocomplete attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete)
 :::
 
+<br/>
+
 ## Code
 
-### Whole code
+### Full code
 
-```tsx title="autoComplete.tsx"
+```tsx title="AutoComplete.tsx"
 import * as React from 'react';
 import { ReactMultiEmail } from 'react-multi-email';
 import 'react-multi-email/dist/style.css';
@@ -56,6 +64,7 @@ export default function multiEmail() {
         // autoComplete prop
         autoComplete='on'
         id="email"
+        placeholder="Input your Email Address"
         emails={emails}
         onChange={(_emails: string[]) => {
           setEmails(_emails);
@@ -92,11 +101,12 @@ const styles = {
 };
 ```
 
-### Specific code
+### Code snippet
 
-```tsx title="autoComplete.tsx"
+```tsx title="AutoComplete.tsx"
 <ReactMultiEmail
   autoComplete='on'
   // id="email"
+  // other props...
 />
 ```

@@ -1,11 +1,11 @@
 ---
-sidebar_position: 4
+sidebar_position: 7
 description: Run function when out of focus in text area
 ---
 
 `onBlur` is the prop for the function that runs when it is out of focus. Mainly used with `onFocus`.
 
-import OnBlur from '../../../src/examples/OnBlur'
+<br/>
 
 ## About onBlur
 
@@ -13,15 +13,21 @@ import OnBlur from '../../../src/examples/OnBlur'
 - Type: `() => void`
 - Default: `() => {}`
 
+<br/>
+
 ## Demo
+
+import OnBlur from '../../../src/examples/OnBlur'
 
 <OnBlur />
 
+<br/>
+
 ## Code
 
-### Whole code
+### Full code
 
-```tsx title="onBlur.tsx"
+```tsx title="OnBlur.tsx"
 import * as React from 'react';
 import { ReactMultiEmail } from 'react-multi-email';
 import 'react-multi-email/dist/style.css';
@@ -87,16 +93,17 @@ const styles = {
 };
 ```
 
-### Specific code
+### Code snippet
 
-```tsx title="onBlur.tsx"
+```tsx title="OnBlur.tsx"
 const onBlurFunc = () => {
-    // do something
+  // do something
 }
 
 return(
-    <ReactMultiEmail
-        onBlur={onBlurFunc}
-    />
+  <ReactMultiEmail
+      onBlur={onBlurFunc}
+      // other props...
+  />
 );
 ```

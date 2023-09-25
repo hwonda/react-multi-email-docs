@@ -1,5 +1,5 @@
 ---
-sidebar_position: 1
+sidebar_position: 13
 description: Provide a guide to the text area
 ---
 
@@ -7,7 +7,7 @@ description: Provide a guide to the text area
 
 You can just replace the string in the placeholder props.
 
-import Placeholder from '../../../src/examples/Placeholder'
+<br/>
 
 ## About placeholder
 
@@ -15,15 +15,21 @@ import Placeholder from '../../../src/examples/Placeholder'
 - Type: `string` | `React.ReactNode`
 - Default: `''`
 
+<br/>
+
 ## Demo
+
+import Placeholder from '../../../src/examples/Placeholder'
 
 <Placeholder />
 
+<br/>
+
 ## Code
 
-### Whole code
+### Full code
 
-```tsx title="placeholder.tsx"
+```tsx title="Placeholder.tsx"
 import * as React from 'react';
 import { ReactMultiEmail } from 'react-multi-email';
 import 'react-multi-email/dist/style.css';
@@ -72,11 +78,12 @@ const styles = {
 };
 ```
 
-### Specific code
+### Code snippet
 
-```tsx title="placeholder.tsx"
+```tsx title="Placeholder.tsx"
 <ReactMultiEmail
     placeholder="Type anything!"
+    // other props...
 />
 ```
 

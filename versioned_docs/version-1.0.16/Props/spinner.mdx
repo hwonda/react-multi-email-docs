@@ -1,14 +1,14 @@
 ---
-sidebar_position: 13
+sidebar_position: 14
 description: Spinner
 ---
 
-The `spinner` prop is provided in the react-multi-email component to visually represent the loading status to the user when the email address is being validated asynchronously (i.e., **when validateEmail returns a Promise**). 
+The `spinner` prop is provided in the reactMultiEmail component to visually represent the loading status to the user when the email address is being validated asynchronously (i.e., **when validateEmail returns a Promise**). 
 
 However, this spinner is only **activated** when `enableSpinner` is set to `true`. 
 Through the `spinner` function, users can render a custom loading interface.
 
-import Spinner from '../../../src/examples/Spinner'
+<br/>
 
 ## About spinner & enableSpinner
 
@@ -24,7 +24,11 @@ import Spinner from '../../../src/examples/Spinner'
 - Type: `boolean`
 - Default: `false`
 
+<br/>
+
 ## Demo
+
+import Spinner from '../../../src/examples/Spinner'
 
 <Spinner />
 
@@ -33,11 +37,13 @@ The asynchronous validation illustrated in the **example isn't connected to a fu
 Thus, when an email is entered, the `spinner` will continue to **run indefinitely**.
 :::
 
+<br/>
+
 ## Code
 
-### Whole code
+### Full code
 
-```tsx title="spinner.tsx"
+```tsx title="Spinner.tsx"
 import * as React from 'react';
 import { ReactMultiEmail } from 'react-multi-email';
 import 'react-multi-email/dist/style.css';
@@ -63,6 +69,7 @@ export default function multiEmail() {
         enableSpinner={true}
         spinner={() => <div>Loading...</div>}
         validateEmail={validateEmailFunc}
+        placeholder="Input your Email Address"
         emails={emails}
         onChange={(_emails: string[]) => {
           setEmails(_emails);
@@ -100,12 +107,14 @@ const styles = {
 
 ```
 
-### Specific code
+### Code snippet
 
-```tsx title="spinner.tsx"
+```tsx title="Spinner.tsx"
 <ReactMultiEmail
   enableSpinner={true}
   spinner={()=>{ return(<div>Loading...</div>)}}
+  // you must need validation fuction on Promise
+  // other props...
 />
 ```
 

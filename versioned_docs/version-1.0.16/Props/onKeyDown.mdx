@@ -1,5 +1,5 @@
 ---
-sidebar_position: 15
+sidebar_position: 11
 description: onKeyDown triggers when a key is pressed
 ---
 
@@ -9,7 +9,7 @@ This callback is invoked **every time a keypress event occurs**. The `KeyboardEv
 
 This code essentially integrates the user-provided `onKeyDown` handler with [the internal logic of the component - `handleOnKeyDown`](https://github.com/axisj/react-multi-email/blob/master/react-multi-email/ReactMultiEmail.tsx), ensuring that both the component's internal behavior and any external logic associated with the `onKeyDown` prop are executed when a key is pressed.
 
-import OnKeyDown from '../../../src/examples/OnKeyDown'
+<br/>
 
 ## About onKeyDown
 
@@ -17,7 +17,11 @@ import OnKeyDown from '../../../src/examples/OnKeyDown'
 - Type: `(evt: React.KeyboardEvent) => void;`
 - Default: `() => {}`
 
+<br/>
+
 ## Demo
+
+import OnKeyDown from '../../../src/examples/OnKeyDown'
 
 <OnKeyDown />
 
@@ -25,11 +29,13 @@ import OnKeyDown from '../../../src/examples/OnKeyDown'
 `OnKeyDown` works when **the keyboard is pressed**. So it **runs before** the `onKeyUp` function.
 :::
 
+<br/>
+
 ## Code
 
-### Whole code
+### Full code
 
-```tsx title="onKeyDown.tsx"
+```tsx title="OnKeyDown.tsx"
 import * as React from 'react';
 import { ReactMultiEmail } from 'react-multi-email';
 import 'react-multi-email/dist/style.css';
@@ -49,6 +55,7 @@ export default function multiEmail() {
       <ReactMultiEmail
         // onKetDown prop
         onKeyDown={onKeyDownFunc}
+        placeholder="Input your Email Address"
         emails={emails}
         onChange={(_emails: string[]) => {
           setEmails(_emails);
@@ -70,7 +77,7 @@ export default function multiEmail() {
       />
       <h4>react-multi-email value</h4>
       <p>{emails.join(", ") || "empty"}</p>
-      <div>currentKey(Down): {currentKeyDown}</div>
+      <div>currentKey(keyDown): {currentKeyDown}</div>
     </div>
   );
 }
@@ -87,9 +94,9 @@ const styles = {
 
 ```
 
-### Specific code
+### Code snippet
 
-```tsx title="onKeyDown.tsx"
+```tsx title="OnKeyDown.tsx"
 const onKeyDownFunc = (event: React.KeyboardEvent<HTMLInputElement>) => {
   // do something
 };
