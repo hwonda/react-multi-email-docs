@@ -1,13 +1,12 @@
 ---
 sidebar_position: 5
-description: onKeyUp activates when a key is released.
+description: Setting a Unique Identifier with the id Prop
 ---
 
-The `id` prop of the `reactMultiEmail` component is analogous to the `id` attribute in HTML. 
-In web development, the `id` attribute is used to uniquely identify each HTML element. 
-Within the same webpage, each `id` value should be distinct.
+In `ReactMultiEmail`, the `id` prop corresponds to the **`id` attribute in HTML,** universally utilized to grant a unique identifier to each HTML element on a webpage. 
+It’s crucial that each id within a page is unique to prevent conflicts and ensure proper element identification.
 
-The `id` prop of the `reactMultiEmail` is used to set a unique identifier for the `input` element that the component renders.
+The `id` prop in `ReactMultiEmail` is designated to assign a unique identifier to the input element rendered by the component.
 
 <br/>
 
@@ -15,7 +14,7 @@ The `id` prop of the `reactMultiEmail` is used to set a unique identifier for th
 
 - Property: `id`
 - Type: `string`
-- Default: `''`
+- Default: `undefined`
 
 <br/>
 
@@ -32,7 +31,7 @@ import Id from '../../../src/examples/Id'
 ![My Image](./images/id.png)
 
 :::info
-The `id` provided as a prop is added to the **input box**.
+The `id` assigned as a prop is reflected in the **input box**.
 :::
 
 <br/>
@@ -102,10 +101,10 @@ const styles = {
 ```
 <br/><br/>
 
-:::tip General usage
-Within the ReactMultiEmail component, the `id` prop is typically used in the following scenarios:
+:::tip Practical Uses of id Prop
+Within the ReactMultiEmail component, the `id` prop is predominantly used for:
 
-1. **DOM Manipulation & Query**: In certain cases, you might need to directly manipulate or query a DOM element using JavaScript. In such scenarios, the `id` provides an easy way to access a specific element.
-2. **Styling and Scripting**: Styling and Scripting: The `id` can be used to target a specific input element for applying CSS styles or JavaScript logic.
-3. **Label Association**: Associating with Labels: By using the `id` value, an input field can be associated with a `label` element. This offers a user experience where clicking on the label will focus the corresponding input field.
+1. **DOM Manipulation & Query**: Direct manipulation or querying a DOM element using JavaScript often requires the use of the id prop to access specific elements easily.
+2. **Styling and Scripting**: The `id` prop can target a specific `input` element for the application of CSS styles or the execution of JavaScript functions.
+3. **Label Association**:  By employing the `id` value, a `label` element can be associated with an input field, enhancing user experience by enabling the focusing of the corresponding input field through label interaction.
 :::

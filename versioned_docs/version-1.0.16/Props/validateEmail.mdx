@@ -3,7 +3,7 @@ sidebar_position: 16
 description: Create own validation for the email address
 ---
 
-The `validateEmail` prop of `reactMultiEmail` is used for validating the entered email address.
+The `validateEmail` prop of `ReactMultiEmail` is used for validating the entered email address.
 
 While the component provides a `basic email validation`([isEmail.tsx](https://github.com/axisj/react-multi-email/blob/master/react-multi-email/isEmail.tsx)) out of the box, 
 you can provide **your own custom validation logic** using the `validateEmail` prop in case you have specific criteria or scenarios for validation.
@@ -16,7 +16,7 @@ The type of the `validateEmail` prop is `(email: string) => boolean | Promise<bo
 
 - Property: `validateEmail`
 - Type: `(email: string) => boolean | Promise;`
-- Default: `false`
+- Default: `undefined`
 
 <br/>
 

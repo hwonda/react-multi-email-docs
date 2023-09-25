@@ -7,8 +7,8 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   
-  title: 'React-multi-email',
-  tagline: 'Put wings on your code',
+  title: 'react-multi-email',
+  tagline: 'React component for inputting email addresses',
   favicon: 'img/logo.png',
 
   // Set the production url of your site here
@@ -66,7 +66,7 @@ const config = {
       // Replace with your project's social card
       image: 'img/react-multi-email.png',
       navbar: {
-        title: 'React-multi-email',
+        title: 'react-multi-email',
         logo: {
           alt: 'My Site Logo',
           src: 'img/logo.png',

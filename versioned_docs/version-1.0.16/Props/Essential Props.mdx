@@ -4,64 +4,66 @@ title: Essential Props
 description: Essential Props - emails, onChange, and getLabel
 ---
 
-# Essential Props of reactMultiEmail
+# Essential Props of ReactMultiEmail
 
-The **reactMultiEmail component** is versatile and customizable.
+The `ReactMultiEmail` component is highly versatile and customizable, designed to accommodate a variety of user needs. 
+To harness its full potential, it is crucial to understand the three fundamental props: `emails`, `onChange`, and `getLabel`.
 
-However, there are **three core props** that you must understand to utilize it effectively<br/>
-: `emails`, `onChange`, and `getLabel`.
 <br/>
 
 ## Essential Props
 
 ### emails
 
-The `emails` prop represents **the array of email addresses**.
+`emails` prop is responsible for representing an array of email addresses.
 
 - Property: `emails`
 - Type: `string[]`
-- Default: `[]`
+- Default: `undefined`
 
 :::info
-This prop is essential for tracking the state of the email addresses entered by the user.
+This prop is critical for maintaining the state of the email addresses inputted by the user.
 :::
 
 ### onChange
-The `onChange` prop is a callback function that **receives the updated email array whenever a change occurs**.
+
+The `onChange` prop is a callback function invoked whenever there is a change in the email array, receiving the updated array as its parameter.
+
 
 - Property: `onChange`
 - Type: `(emails: string[]) => void`
-- Default: `() => {}`
+- Default: `undefined`
 
 :::info
-Use this callback to update the state of your emails, ensuring your component stays up-to-date with user input.
+Leverage this callback to synchronize the email state with the user input, ensuring the component reflects the most recent user interactions.
 :::
 
 ### getLabel
 
-The `getLabel` prop is a function that **allows customization of how each email tag is displayed**.
+`getLabel` prop allows for customization of the display of each email tag.
 
 - Property: `getLabel`
 - Type: `(email: string, index: number, removeEmail: (index: number) => void) => ReactNode`
-- Default: `(email, index, removeEmail) => email`
+- Default: `undefined`
 
 :::info
-This prop gives you the flexibility to **style** each email tag, adding a personal touch to your component's appearance.
+Utilize this prop to stylize each email tag individually, adding a unique flair to your component's presentation.
 :::
 
 <br/>
 
 ## Demo
 
-:point_down: Here's a demonstration using all three essential props
+See the demonstration below utilizing all three essential props:
 
 import EssentialProps from '../../../src/examples/EssentialProps'
 
 <EssentialProps /><br/>
 
 :::tip
-Type the appropriate email address and press the Enter key. Then press the backspace key.
+Enter a valid email address and press the Enter key. To remove, press the Backspace key.
 :::
+
 <br/>
 
 ## Code
@@ -98,4 +100,4 @@ export default function EssentialProps () {
 }
 ```
 
-By understanding and using these three props, you can unlock the full potential of the **ReactMultiEmail component**, making your email input user-friendly and visually appealing.
+By mastering these three essential props, you can unleash the full capabilities of the `ReactMultiEmail` component, ensuring a user-friendly and aesthetically pleasing email input experience.

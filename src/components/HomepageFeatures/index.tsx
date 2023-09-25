@@ -14,7 +14,7 @@ const FeatureList: FeatureItem[] = [
     Svg: require('@site/static/img/feather.svg').default,
     description: (
       <>
-      This library has no dependencies. Everything is included in a very small size.
+      This library has no dependencies. Everything is included in a very small package.
       </>
     ),
   },
@@ -23,8 +23,8 @@ const FeatureList: FeatureItem[] = [
     Svg: require('@site/static/img/bulb.svg').default,
     description: (
       <>
-        React-multi-email is very simple and convenient to customize.
-        Try applying it to your code easily.
+        react-multi-email is a very simple and convenient tool for customizing. 
+        You can try to apply it to your code easily.
       </>
     ),
   },
@@ -33,8 +33,8 @@ const FeatureList: FeatureItem[] = [
     Svg: require('@site/static/img/rocket.svg').default,
     description: (
       <>
-        It offers a variety of features, including Focus, onBlur, 
-        as well as the basic function of multiple email input.
+        It provides various features, such as Focus and onBlur events, 
+        and the basic functionality of accepting multiple email inputs.
       </>
     ),
   },
