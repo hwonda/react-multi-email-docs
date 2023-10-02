@@ -4,12 +4,11 @@ title: noClass
 description: Add custom class name to the root <div> element
 ---
 
-The `noClass` prop is used to control whether the default provided class name, '**react-multi-email**', should be added to the top-level `div` of the component.
+The `noClass` prop controls whether to apply the default class name, '**react-multi-email**', to the top-level div of the component.
 
-If `noClass` is set to true, the default class name '**react-multi-email**' will not be included. 
-Conversely, if `noClass` is set to false or is not specified, the class '**react-multi-email**' will be applied to the `div` element.
+Setting `noClass` to true will prevent the default class name '**react-multi-email**' from being applied. Conversely, if `noClass` is either set to false or left unspecified, the class '**react-multi-email**' will be automatically applied to the div element.
 
-This prop enables users to opt out of the default styling provided by the `ReactMultiEmail` component and apply their custom styles by deactivating the default class name.
+Utilizing this prop allows users to override the default styling of the `ReactMultiEmail` component by deactivating the default class name, enabling the application of custom styles.
 <br/>
 
 ## About noClass
@@ -27,7 +26,7 @@ import NoClass from '../../../src/examples/NoClass'
 <NoClass />
 
 :::info
-To observe the difference, open developer mode and check the class name. When the default class ('**react-multi-email**') is not applied, there is a noticeable difference in style.
+To notice the difference, enable developer mode and inspect the class name. The absence of the default class '**react-multi-email**' will result in noticeable style alterations.
 :::
 
 <br/>
@@ -37,7 +36,7 @@ To observe the difference, open developer mode and check the class name. When th
 ![My Image](./images/noClass.png)
 
 :::tip
-If the text area is empty, the `div` element have the class name '**empty**'.
+If the text area is empty, the `div` element have the default class name '**empty**'.
 :::
 
 <br/>

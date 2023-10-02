@@ -3,13 +3,13 @@ sidebar_position: 11
 description: onKeyDown triggers when a key is pressed
 ---
 
-The `onKeyDown` prop is used to handle the event when a user presses down on a keyboard key.
+The `onKeyDown` prop is designed to handle events when a user presses a keyboard key down within the component. This callback is triggered for **every keypress event**, and it receives a KeyboardEvent object, providing detailed information about the specific key that triggered the event.
 
-This callback is invoked **every time a keypress event occurs**. The `KeyboardEvent object` passed as an argument **provides detailed information** about **the specific keypress event**.
+Within the `ReactMultiEmail` component, an internal logic, [handleKeyDown](https://github.com/axisj/react-multi-email/blob/master/react-multi-email/ReactMultiEmail.tsx), is incorporated, defining actions for specified keys. In addition to this, users have the capability to either further define actions for keys specified in the internal logic or newly define actions for different keys.
 
-This code essentially integrates the user-provided `onKeyDown` handler with [the internal logic of the component - `handleOnKeyDown`](https://github.com/axisj/react-multi-email/blob/master/react-multi-email/ReactMultiEmail.tsx), ensuring that both the component's internal behavior and any external logic associated with the `onKeyDown` prop are executed when a key is pressed.
-
-<br/>
+:::info
+`onKeyDown` is triggered when a key is pressed down, executing before the `onKeyUp` function.
+:::
 
 ## About onKeyDown
 
@@ -24,10 +24,6 @@ This code essentially integrates the user-provided `onKeyDown` handler with [the
 import OnKeyDown from '../../../src/examples/OnKeyDown'
 
 <OnKeyDown />
-
-:::info
-`OnKeyDown` works when **the keyboard is pressed**. So it **runs before** the `onKeyUp` function.
-:::
 
 <br/>
 

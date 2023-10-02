@@ -3,9 +3,9 @@ sidebar_position: 10
 description: Run function when focused in the text area
 ---
 
-OnFocus can specify the function to execute **if it is focused in the text area.** 
+The `onFocus` prop allows developers to define a function to execute when the text area within the component gains focus. 
 
-The example expresses the function **replace the background color to red if focused.**
+The `onFocus` prop is triggered only when the text area is focused. **To define behavior for when the text area loses focus, consider using the `onBlur` prop.**
 
 <br/>
 
@@ -19,14 +19,11 @@ The example expresses the function **replace the background color to red if focu
 
 ## Demo
 
+For instance, the background color could be changed to `red` upon focusing, as demonstrated in the given example.
+
 import OnFocus from '../../../src/examples/OnFocus'
 
 <OnFocus />
-
-:::info
-`onFocus` prop **runs only when it is focused.**
-If you want to execute function when it is focused out, use the next prop `onBlur`
-:::
 
 <br/>
 

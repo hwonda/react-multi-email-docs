@@ -3,8 +3,8 @@ sidebar_position: 9
 description: Call when enable function returns false
 ---
 
-This callback function is invoked when the `enable` function returns `false`. 
-`onDisabled` allows you to specify actions you want to execute **when a user can't add an email**.
+The `onDisabled` prop is a callback function triggered when the `enable` function evaluates to `false`. 
+It enables developers to define specific actions to execute when a user is prevented from adding an email, enhancing user feedback and interaction within the application.
 
 <br/>
 
@@ -18,7 +18,7 @@ This callback function is invoked when the `enable` function returns `false`.
 
 ## Demo
 
-Below is an example of **sending a notification message** to the user when the `enabled` function returns `false`.
+Here's an example where a notification message is sent to the user, informing them of the restriction when the `enable` function returns `false`.
 
 import OnDisabled from '../../../src/examples/OnDisabled'
 
@@ -99,5 +99,5 @@ const onDisabledFunc = () => {
 ```
 
 :::info
-`onDisabled` is always used with `enable`.
+The `onDisabled` prop is commonly used in conjunction with the `enable` prop to manage user interactions and restrictions effectively.
 :::

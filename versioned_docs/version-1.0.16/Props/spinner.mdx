@@ -3,10 +3,9 @@ sidebar_position: 14
 description: Spinner
 ---
 
-The `spinner` prop is provided in the ReactMultiEmail component to visually represent the loading status to the user when the email address is being validated asynchronously (i.e., **when validateEmail returns a Promise**). 
+The `ReactMultiEmail` component offers the `spinner` prop to visually signify the loading status to users, specifically during the **asynchronous validation of email addresses** (i.e., when validateEmail returns a `Promise`).
 
-However, this spinner is only **activated** when `enableSpinner` is set to `true`. 
-Through the `spinner` function, users can render a custom loading interface.
+However, this `spinner` is only operational when the `enableSpinner` is assigned `true`. By utilizing the spinner function, developers have the flexibility to render a custom loading interface, enhancing the user's experience during the wait.
 
 <br/>
 
@@ -33,8 +32,7 @@ import Spinner from '../../../src/examples/Spinner'
 <Spinner />
 
 :::caution
-The asynchronous validation illustrated in the **example isn't connected to a functional API**.<br/>
-Thus, when an email is entered, the `spinner` will continue to **run indefinitely**.
+The demonstrated asynchronous validation is not connected to a live API. Therefore, entering an email will cause the `spinner` to run indefinitely.
 :::
 
 <br/>

@@ -3,14 +3,9 @@ sidebar_position: 12
 description: onKeyUp activates when a key is released.
 ---
 
+The `onKeyUp` prop in the `ReactMultiEmail` component is designed to handle events occurring when a user releases a keyboard key. This callback is invoked every time a key is released, with the KeyboardEvent object provided as an argument detailing the specific key release event.
 
-The `onKeyUp` prop in the **ReactMultiEmail component** is utilized to handle the event **when you releases a keyboard key after pressing it**.<br/>
-This callback gets invoked **every time a key-up event occurs**. 
-
-The KeyboardEvent object provided as an argument contains detailed information about the specific key release event.
-
-This code effectively integrates the user-provided `onKeyUp` handler with [the component's internal behavior - handleOnKeyUp](https://github.com/axisj/react-multi-email/blob/master/react-multi-email/ReactMultiEmail.tsx). 
-It ensures that both the component's inherent operations and any external logic linked with the `onKeyUp` prop are executed when a key is released.
+This prop allows the seamless integration of user-provided onKeyUp handlers with the component's internal mechanism, [handleOnKeyUp](https://github.com/axisj/react-multi-email/blob/master/react-multi-email/ReactMultiEmail.tsx), ensuring the synchronous execution of both the inherent component operations and any external logic associated with the `onKeyUp` prop upon the release of a key.
 
 <br/>
 
@@ -29,8 +24,8 @@ import OnKeyUp from '../../../src/examples/OnKeyUp'
 <OnKeyUp />
 
 :::info
-Because `onKeyUp` triggers when you release a key on your keyboard, it executes after `onKeyDown`. 
-After entering long words in the above demo, you can test this behavior by **continuously pressing** the backspace key.
+`onKeyUp` is triggered upon the release of a key, and hence, executes subsequent to `onKeyDown`. 
+Experiment with this behavior in the demo above by continuously pressing the `backspace` key after entering long words.
 :::
 
 <br/>

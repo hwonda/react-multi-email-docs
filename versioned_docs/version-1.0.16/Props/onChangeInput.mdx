@@ -3,13 +3,9 @@ sidebar_position: 8
 description: onChangeInput is triggered whenever the input field's value change
 ---
 
-The `onChangeInput` prop is a callback function invoked each time a user types into the internal `input` field. 
+The `onChangeInput` prop acts as a callback function, invoked each time a user interacts with the internal `input` field. This prop is essential for providing immediate feedback and processing input values dynamically as the user types.
 
-This callback is **useful for providing immediate feedback or processing input values as the user types.**
-
-The function specified for this prop is triggered **whenever the input field's value changes** and **receives the current input value as its argument**. 
-This allows **tracking of real-time input** and the ability to **apply necessary logic or actions based on that input**.
-
+The function assigned to this prop activates whenever there is any modification in the input field's value and receives the current input value as its parameter, enabling the tracking of real-time input and facilitating the application of any necessary logic or actions based on that input.
 <br/>
 
 ## About onChangeInput
@@ -27,7 +23,7 @@ import OnChangeInput from '../../../src/examples/OnChangeInput'
 <OnChangeInput />
 
 :::info
-Dynamic styling: Changes the style of the input field based on the input value. If there is an **incorrect input**, change the color of the text to **red**.
+Dynamic styling example: This demo changes the style of the input field based on the input value. If an incorrect input is detected, the **border color** changes to `red`.
 :::
 
 <br/>

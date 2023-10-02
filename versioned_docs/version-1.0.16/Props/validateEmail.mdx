@@ -3,12 +3,12 @@ sidebar_position: 16
 description: Create own validation for the email address
 ---
 
-The `validateEmail` prop of `ReactMultiEmail` is used for validating the entered email address.
+The `validateEmail` prop in the `ReactMultiEmail` component is designed for validating the entered email addresses.
 
-While the component provides a `basic email validation`([isEmail.tsx](https://github.com/axisj/react-multi-email/blob/master/react-multi-email/isEmail.tsx)) out of the box, 
-you can provide **your own custom validation logic** using the `validateEmail` prop in case you have specific criteria or scenarios for validation.
+While the component provides a basic email validation out of the box (see [isEmail.tsx](https://github.com/axisj/react-multi-email/blob/master/react-multi-email/isEmail.tsx)), 
+the `validateEmail` prop allows you to implement your own custom validation logic to accommodate specific criteria or scenarios.
 
-The type of the `validateEmail` prop is `(email: string) => boolean | Promise<boolean>`. This means the function can either return a boolean value synchronously or return a `Promise<boolean>` asynchronously.
+The function provided to `validateEmail` can either return a `boolean` value synchronously or a `Promise` for asynchronous operations.
 
 <br/>
 
@@ -27,13 +27,13 @@ import ValidateEmail from '../../../src/examples/ValidateEmail'
 <ValidateEmail />
 
 :::info
-As can be seen from the regular expressions used, for example, 
-if the **first element of the email (ID) is capitalized** or the **third element of the email (TLD) is more than four characters long**, 
-it will not be added. **Give that a try!**<br/><br/>
+Experiment with the provided examples: if the first element of the email (ID) is capitalized, 
+or if the third element of the email (TLD) has more than four characters, it will not be added.
+Give it a try!
 :::
 
-:::tip 
-Click on the link below to learn more about regular expressions. <br/>
+:::tip regular expressions
+To understand the used **regular expressions** better, refer to the following resources: <br/>
 [Regular Expression Tutorial(w3schools)](https://www.w3schools.com/jsref/jsref_obj_regexp.asp) <br/>
 [Regular Expression Test Site(regexr)](https://regexr.com/)
 :::
@@ -134,7 +134,5 @@ const validateEmailFunc = async (email: string) => {
 ```
 
 :::info
-This is an example of asynchronous processing. <br/>
-If you want to use asynchronous processing, you can use `async` and `await` as shown in the example above. <br/>
-If you want to use the `spinner` prop, handle validation asynchronously.
+For **asynchronous validations**, the `async` and `await` can be used as shown in the example above, enabling the use of the `spinner` prop for visual feedback during the validation process.
 :::
