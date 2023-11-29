@@ -3,7 +3,7 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - master  # Trigger the workflow when the master branch is pushed to
+      - master
 
 jobs:
   build-and-deploy:
@@ -13,12 +13,12 @@ jobs:
     - name: Checkout Repository
       uses: actions/checkout@v2
       with:
-        persist-credentials: false  # This is necessary for GitHub Pages
+        persist-credentials: false
 
     - name: Setup Node.js
       uses: actions/setup-node@v2
       with:
-        node-version: '16'  # Use the Node.js version that matches your project
+        node-version: '16.14'
 
     - name: Install Dependencies
       run: yarn install
